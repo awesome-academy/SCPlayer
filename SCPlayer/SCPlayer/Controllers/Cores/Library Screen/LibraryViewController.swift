@@ -11,5 +11,11 @@ class LibraryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+    }
+    
+    private func initView() {
+        title = "Library"
+        navigationItem.largeTitleDisplayMode = .always
     }
 }

@@ -11,6 +11,12 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+    }
+    
+    private func initView() {
+        title = "Home"
+        navigationItem.largeTitleDisplayMode = .always
     }
 
 }
