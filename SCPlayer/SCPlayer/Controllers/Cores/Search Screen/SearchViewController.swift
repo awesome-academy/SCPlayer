@@ -11,10 +11,10 @@ final class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initView()
+        configure()
     }
     
-    private func initView() {
+    private func configure() {
         title = "Search"
         navigationItem.largeTitleDisplayMode = .always
     }
