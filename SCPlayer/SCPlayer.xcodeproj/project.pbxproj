@@ -12,6 +12,13 @@
 		EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */; };
 		EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1F2648DD8E00E2F4EC /* LaunchScreen.storyboard */; };
 		EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */; };
+		ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95692648E7EE00970744 /* HomeViewController.swift */; };
+		ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDA956A2648E7EE00970744 /* HomeViewController.xib */; };
+		ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA956E2648E80D00970744 /* SearchViewController.swift */; };
+		ECDA95712648E80D00970744 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDA956F2648E80D00970744 /* SearchViewController.xib */; };
+		ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95732648E82500970744 /* LibraryViewController.swift */; };
+		ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDA95742648E82500970744 /* LibraryViewController.xib */; };
+		ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95782648F0D100970744 /* TabBarItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		EC72AA202648DD8E00E2F4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC72AA222648DD8E00E2F4EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		ECDA95692648E7EE00970744 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ECDA956A2648E7EE00970744 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		ECDA956E2648E80D00970744 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		ECDA956F2648E80D00970744 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		ECDA95732648E82500970744 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		ECDA95742648E82500970744 /* LibraryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryViewController.xib; sourceTree = "<group>"; };
+		ECDA95782648F0D100970744 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +129,48 @@
 		EC72AA2E2648DEF600E2F4EC /* Cores */ = {
 			isa = PBXGroup;
 			children = (
-				EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */,
+				ECDA95772648F0B800970744 /* TabBar */,
+				ECDA95682648E7D600970744 /* Home Screen */,
+				ECDA956D2648E7F200970744 /* Search Screen */,
+				ECDA95722648E81400970744 /* Library Screen */,
 			);
 			path = Cores;
+			sourceTree = "<group>";
+		};
+		ECDA95682648E7D600970744 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ECDA95692648E7EE00970744 /* HomeViewController.swift */,
+				ECDA956A2648E7EE00970744 /* HomeViewController.xib */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		ECDA956D2648E7F200970744 /* Search Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ECDA956E2648E80D00970744 /* SearchViewController.swift */,
+				ECDA956F2648E80D00970744 /* SearchViewController.xib */,
+			);
+			path = "Search Screen";
+			sourceTree = "<group>";
+		};
+		ECDA95722648E81400970744 /* Library Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ECDA95732648E82500970744 /* LibraryViewController.swift */,
+				ECDA95742648E82500970744 /* LibraryViewController.xib */,
+			);
+			path = "Library Screen";
+			sourceTree = "<group>";
+		};
+		ECDA95772648F0B800970744 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */,
+				ECDA95782648F0D100970744 /* TabBarItems.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */,
+				ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */,
 				EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */,
+				ECDA95712648E80D00970744 /* SearchViewController.xib in Resources */,
+				ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,9 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */,
+				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
 				EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */,
 				EC72AA172648DD8B00E2F4EC /* SceneDelegate.swift in Sources */,
+				ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */,
+				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
