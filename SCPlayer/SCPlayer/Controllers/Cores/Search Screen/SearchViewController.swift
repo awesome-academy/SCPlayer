@@ -18,6 +18,4 @@ final class SearchViewController: UIViewController {
         title = "Search"
         navigationItem.largeTitleDisplayMode = .always
     }
-
-
 }

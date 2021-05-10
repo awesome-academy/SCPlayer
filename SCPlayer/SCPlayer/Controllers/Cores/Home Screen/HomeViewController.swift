@@ -18,5 +18,4 @@ final class HomeViewController: UIViewController {
         title = "Home"
         navigationItem.largeTitleDisplayMode = .always
     }
-
 }
