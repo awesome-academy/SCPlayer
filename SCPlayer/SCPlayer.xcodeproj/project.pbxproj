@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC243AD4264A7FC400B956F3 /* APIKey.swift */; };
+		EC6519E2264A303F007BA2FD /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E0264A303F007BA2FD /* URLString.swift */; };
+		EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E1264A303F007BA2FD /* APIServices.swift */; };
+		EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E4264A3048007BA2FD /* TrackModel.swift */; };
+		EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E5264A3048007BA2FD /* UserModel.swift */; };
 		EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA142648DD8B00E2F4EC /* AppDelegate.swift */; };
 		EC72AA172648DD8B00E2F4EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA162648DD8B00E2F4EC /* SceneDelegate.swift */; };
 		EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC243AD4264A7FC400B956F3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EC6519E0264A303F007BA2FD /* URLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
+		EC6519E1264A303F007BA2FD /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		EC6519E4264A3048007BA2FD /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
+		EC6519E5264A3048007BA2FD /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		EC72AA112648DD8B00E2F4EC /* SCPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC72AA142648DD8B00E2F4EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC72AA162648DD8B00E2F4EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +59,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC6519DE264A2FF3007BA2FD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EC6519E1264A303F007BA2FD /* APIServices.swift */,
+				EC6519E0264A303F007BA2FD /* URLString.swift */,
+				EC243AD4264A7FC400B956F3 /* APIKey.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		EC6519DF264A2FFB007BA2FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC6519E4264A3048007BA2FD /* TrackModel.swift */,
+				EC6519E5264A3048007BA2FD /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EC72AA082648DD8B00E2F4EC = {
 			isa = PBXGroup;
 			children = (
@@ -68,10 +97,9 @@
 		EC72AA132648DD8B00E2F4EC /* SCPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				EC6519DF264A2FFB007BA2FD /* Models */,
+				EC6519DE264A2FF3007BA2FD /* Managers */,
 				EC72AA2D2648DDE800E2F4EC /* Resources */,
-				EC72AA2C2648DDE300E2F4EC /* Managers */,
-				EC72AA2A2648DDA700E2F4EC /* ViewModels */,
-				EC72AA2B2648DDDB00E2F4EC /* Models */,
 				EC72AA292648DDA300E2F4EC /* Views */,
 				EC72AA282648DD9A00E2F4EC /* Controllers */,
 				EC72AA222648DD8E00E2F4EC /* Info.plist */,
@@ -93,27 +121,6 @@
 				EC72AA1F2648DD8E00E2F4EC /* LaunchScreen.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		EC72AA2A2648DDA700E2F4EC /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		EC72AA2B2648DDDB00E2F4EC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		EC72AA2C2648DDE300E2F4EC /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		EC72AA2D2648DDE800E2F4EC /* Resources */ = {
@@ -248,10 +255,15 @@
 				ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
+				EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */,
 				EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */,
+				EC6519E2264A303F007BA2FD /* URLString.swift in Sources */,
 				EC72AA172648DD8B00E2F4EC /* SceneDelegate.swift in Sources */,
 				ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */,
 				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
+				EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */,
+				EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */,
+				EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
