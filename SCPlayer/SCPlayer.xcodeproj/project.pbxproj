@@ -12,6 +12,10 @@
 		EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */; };
 		EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1F2648DD8E00E2F4EC /* LaunchScreen.storyboard */; };
 		EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */; };
+		EC980A7A26493D22007E6813 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC980A7926493D22007E6813 /* TrackModel.swift */; };
+		EC980A7C26493D3E007E6813 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC980A7B26493D3E007E6813 /* UserModel.swift */; };
+		EC980A7E26493D4E007E6813 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC980A7D26493D4E007E6813 /* APIServices.swift */; };
+		EC980A8126493D62007E6813 /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC980A8026493D62007E6813 /* URLString.swift */; };
 		ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95692648E7EE00970744 /* HomeViewController.swift */; };
 		ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDA956A2648E7EE00970744 /* HomeViewController.xib */; };
 		ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA956E2648E80D00970744 /* SearchViewController.swift */; };
@@ -29,6 +33,10 @@
 		EC72AA202648DD8E00E2F4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC72AA222648DD8E00E2F4EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EC980A7926493D22007E6813 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrackModel.swift; path = ../../../../../Documents/TrackModel.swift; sourceTree = "<group>"; };
+		EC980A7B26493D3E007E6813 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = ../../../../../Documents/UserModel.swift; sourceTree = "<group>"; };
+		EC980A7D26493D4E007E6813 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIServices.swift; path = ../../../../../Documents/APIServices.swift; sourceTree = "<group>"; };
+		EC980A8026493D62007E6813 /* URLString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = URLString.swift; path = ../../../../../Documents/URLString.swift; sourceTree = "<group>"; };
 		ECDA95692648E7EE00970744 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECDA956A2648E7EE00970744 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		ECDA956E2648E80D00970744 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -69,9 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				EC72AA2D2648DDE800E2F4EC /* Resources */,
-				EC72AA2C2648DDE300E2F4EC /* Managers */,
-				EC72AA2A2648DDA700E2F4EC /* ViewModels */,
-				EC72AA2B2648DDDB00E2F4EC /* Models */,
+				EC980A7826493D11007E6813 /* Manager */,
+				EC980A7726493D00007E6813 /* Models */,
 				EC72AA292648DDA300E2F4EC /* Views */,
 				EC72AA282648DD9A00E2F4EC /* Controllers */,
 				EC72AA222648DD8E00E2F4EC /* Info.plist */,
@@ -95,27 +102,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EC72AA2A2648DDA700E2F4EC /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		EC72AA2B2648DDDB00E2F4EC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		EC72AA2C2648DDE300E2F4EC /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		EC72AA2D2648DDE800E2F4EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +121,24 @@
 				ECDA95722648E81400970744 /* Library Screen */,
 			);
 			path = Cores;
+			sourceTree = "<group>";
+		};
+		EC980A7726493D00007E6813 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC980A7926493D22007E6813 /* TrackModel.swift */,
+				EC980A7B26493D3E007E6813 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EC980A7826493D11007E6813 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				EC980A7D26493D4E007E6813 /* APIServices.swift */,
+				EC980A8026493D62007E6813 /* URLString.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		ECDA95682648E7D600970744 /* Home Screen */ = {
@@ -249,8 +253,12 @@
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
 				EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */,
+				EC980A7E26493D4E007E6813 /* APIServices.swift in Sources */,
 				EC72AA172648DD8B00E2F4EC /* SceneDelegate.swift in Sources */,
+				EC980A7A26493D22007E6813 /* TrackModel.swift in Sources */,
 				ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */,
+				EC980A8126493D62007E6813 /* URLString.swift in Sources */,
+				EC980A7C26493D3E007E6813 /* UserModel.swift in Sources */,
 				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
