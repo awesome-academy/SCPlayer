@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,15 @@
 		EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E1264A303F007BA2FD /* APIServices.swift */; };
 		EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E4264A3048007BA2FD /* TrackModel.swift */; };
 		EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E5264A3048007BA2FD /* UserModel.swift */; };
+		EC6B4392264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B4390264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift */; };
+		EC6B4393264B6BBA00D0825A /* HomeListTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6B4391264B6BBA00D0825A /* HomeListTrackCollectionViewCell.xib */; };
+		EC6B4396264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B4394264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift */; };
+		EC6B4397264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6B4395264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib */; };
+		EC6B4399264B70F000D0825A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B4398264B70F000D0825A /* UIView+.swift */; };
+		EC6B439D264B75E300D0825A /* HomeTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B439B264B75E300D0825A /* HomeTrackCollectionViewCell.swift */; };
+		EC6B439E264B75E300D0825A /* HomeTrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6B439C264B75E300D0825A /* HomeTrackCollectionViewCell.xib */; };
+		EC6B43A1264B8B2900D0825A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EC6B43A0264B8B2900D0825A /* Then */; };
+		EC6B43A4264B8B4100D0825A /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EC6B43A3264B8B4100D0825A /* Reusable */; };
 		EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA142648DD8B00E2F4EC /* AppDelegate.swift */; };
 		EC72AA172648DD8B00E2F4EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA162648DD8B00E2F4EC /* SceneDelegate.swift */; };
 		EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */; };
@@ -32,6 +41,13 @@
 		EC6519E1264A303F007BA2FD /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		EC6519E4264A3048007BA2FD /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		EC6519E5264A3048007BA2FD /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		EC6B4390264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListTrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC6B4391264B6BBA00D0825A /* HomeListTrackCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListTrackCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC6B4394264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGenreLabelCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC6B4395264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeGenreLabelCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC6B4398264B70F000D0825A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		EC6B439B264B75E300D0825A /* HomeTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC6B439C264B75E300D0825A /* HomeTrackCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTrackCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC72AA112648DD8B00E2F4EC /* SCPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC72AA142648DD8B00E2F4EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC72AA162648DD8B00E2F4EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6B43A1264B8B2900D0825A /* Then in Frameworks */,
+				EC6B43A4264B8B4100D0825A /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +96,27 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EC6B438B264B6ADA00D0825A /* Home Screen Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC6B439A264B75C100D0825A /* Home List Track */,
+				EC6B4394264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift */,
+				EC6B4395264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib */,
+			);
+			path = "Home Screen Cell";
+			sourceTree = "<group>";
+		};
+		EC6B439A264B75C100D0825A /* Home List Track */ = {
+			isa = PBXGroup;
+			children = (
+				EC6B4390264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift */,
+				EC6B4391264B6BBA00D0825A /* HomeListTrackCollectionViewCell.xib */,
+				EC6B439B264B75E300D0825A /* HomeTrackCollectionViewCell.swift */,
+				EC6B439C264B75E300D0825A /* HomeTrackCollectionViewCell.xib */,
+			);
+			path = "Home List Track";
+			sourceTree = "<group>";
+		};
 		EC72AA082648DD8B00E2F4EC = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +136,9 @@
 		EC72AA132648DD8B00E2F4EC /* SCPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				EC72AA2D2648DDE800E2F4EC /* Resources */,
 				EC6519DF264A2FFB007BA2FD /* Models */,
 				EC6519DE264A2FF3007BA2FD /* Managers */,
-				EC72AA2D2648DDE800E2F4EC /* Resources */,
 				EC72AA292648DDA300E2F4EC /* Views */,
 				EC72AA282648DD9A00E2F4EC /* Controllers */,
 				EC72AA222648DD8E00E2F4EC /* Info.plist */,
@@ -129,6 +168,7 @@
 				EC72AA142648DD8B00E2F4EC /* AppDelegate.swift */,
 				EC72AA162648DD8B00E2F4EC /* SceneDelegate.swift */,
 				EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */,
+				EC6B4398264B70F000D0825A /* UIView+.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -147,6 +187,7 @@
 		ECDA95682648E7D600970744 /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
+				EC6B438B264B6ADA00D0825A /* Home Screen Cell */,
 				ECDA95692648E7EE00970744 /* HomeViewController.swift */,
 				ECDA956A2648E7EE00970744 /* HomeViewController.xib */,
 			);
@@ -196,6 +237,10 @@
 			dependencies = (
 			);
 			name = SCPlayer;
+			packageProductDependencies = (
+				EC6B43A0264B8B2900D0825A /* Then */,
+				EC6B43A3264B8B4100D0825A /* Reusable */,
+			);
 			productName = SCPlayer;
 			productReference = EC72AA112648DD8B00E2F4EC /* SCPlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +268,10 @@
 				Base,
 			);
 			mainGroup = EC72AA082648DD8B00E2F4EC;
+			packageReferences = (
+				EC6B439F264B8B2900D0825A /* XCRemoteSwiftPackageReference "Then" */,
+				EC6B43A2264B8B4100D0825A /* XCRemoteSwiftPackageReference "Reusable" */,
+			);
 			productRefGroup = EC72AA122648DD8B00E2F4EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -240,7 +289,10 @@
 				EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */,
 				ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */,
 				EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */,
+				EC6B4393264B6BBA00D0825A /* HomeListTrackCollectionViewCell.xib in Resources */,
 				ECDA95712648E80D00970744 /* SearchViewController.xib in Resources */,
+				EC6B439E264B75E300D0825A /* HomeTrackCollectionViewCell.xib in Resources */,
+				EC6B4397264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib in Resources */,
 				ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,12 +307,16 @@
 				ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
+				EC6B439D264B75E300D0825A /* HomeTrackCollectionViewCell.swift in Sources */,
 				EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */,
 				EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */,
 				EC6519E2264A303F007BA2FD /* URLString.swift in Sources */,
 				EC72AA172648DD8B00E2F4EC /* SceneDelegate.swift in Sources */,
 				ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */,
 				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
+				EC6B4392264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift in Sources */,
+				EC6B4399264B70F000D0825A /* UIView+.swift in Sources */,
+				EC6B4396264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift in Sources */,
 				EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */,
 				EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */,
 				EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */,
@@ -457,6 +513,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC6B439F264B8B2900D0825A /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+		EC6B43A2264B8B4100D0825A /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC6B43A0264B8B2900D0825A /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC6B439F264B8B2900D0825A /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		EC6B43A3264B8B4100D0825A /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC6B43A2264B8B4100D0825A /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC72AA092648DD8B00E2F4EC /* Project object */;
 }
