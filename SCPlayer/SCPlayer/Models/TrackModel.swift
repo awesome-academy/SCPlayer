@@ -14,7 +14,6 @@ struct Track: Codable {
     let permalinkUrl: String?
     let streamURL: String?
     let user: User?
-    
     enum SongKeys: String, CodingKey {
         case trackID = "id"
         case genre = "genre"
@@ -23,10 +22,8 @@ struct Track: Codable {
         case streamURL = "stream_url"
         case user = "user"
     }
-    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SongKeys.self)
-        
         trackID = try container.decode(Int?.self, forKey: .trackID)
         title = try container.decode(String?.self, forKey: .title)
         genre = try container.decode(String?.self, forKey: .genre)
@@ -35,4 +32,3 @@ struct Track: Codable {
         user = try container.decode(User?.self, forKey: .user)
     }
 }
-

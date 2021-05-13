@@ -10,13 +10,13 @@ import Reusable
 
 final class HomeGenreLabelCollectionViewCell: UICollectionViewCell, NibReusable {
 
+    @IBOutlet private weak var genreLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureCell()
     }
     
-    public func configureCell() {
-        
+    public func configureCell(genre: String) {
+        genreLabel.text = genre
     }
-
 }

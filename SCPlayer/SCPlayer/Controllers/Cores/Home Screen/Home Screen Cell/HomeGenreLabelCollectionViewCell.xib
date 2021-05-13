@@ -33,6 +33,9 @@
                 <constraint firstAttribute="bottom" secondItem="so7-KL-2fi" secondAttribute="bottom" id="tTf-2E-KKg"/>
             </constraints>
             <size key="customSize" width="354" height="50"/>
+            <connections>
+                <outlet property="genreLabel" destination="so7-KL-2fi" id="3ID-DK-Urz"/>
+            </connections>
             <point key="canvasLocation" x="314.49275362318843" y="94.419642857142847"/>
         </collectionViewCell>
     </objects>

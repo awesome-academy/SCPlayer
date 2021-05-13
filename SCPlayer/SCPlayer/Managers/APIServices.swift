@@ -17,12 +17,10 @@ final class APIServices {
             return
         }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            //Failed
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            //Sucsess
             do {
                 guard let data = data else { return }
                 let courses = try JSONDecoder().decode([Track].self, from: data)
@@ -33,5 +31,3 @@ final class APIServices {
         }.resume()
     }
 }
-
-

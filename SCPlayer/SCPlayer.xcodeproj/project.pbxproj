@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC243AD4264A7FC400B956F3 /* APIKey.swift */; };
+		EC3FC3DC264BBF6500820D84 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */; };
+		EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */; };
 		EC6519E2264A303F007BA2FD /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E0264A303F007BA2FD /* URLString.swift */; };
 		EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E1264A303F007BA2FD /* APIServices.swift */; };
 		EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E4264A3048007BA2FD /* TrackModel.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		EC243AD4264A7FC400B956F3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		EC6519E0264A303F007BA2FD /* URLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
 		EC6519E1264A303F007BA2FD /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		EC6519E4264A3048007BA2FD /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
@@ -77,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC3FC3D8264BBF3000820D84 /* Orthers */ = {
+			isa = PBXGroup;
+			children = (
+				EC3FC3D9264BBF4300820D84 /* Player Screen */,
+			);
+			path = Orthers;
+			sourceTree = "<group>";
+		};
+		EC3FC3D9264BBF4300820D84 /* Player Screen */ = {
+			isa = PBXGroup;
+			children = (
+				EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */,
+				EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */,
+			);
+			path = "Player Screen";
+			sourceTree = "<group>";
+		};
 		EC6519DE264A2FF3007BA2FD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +170,7 @@
 		EC72AA282648DD9A00E2F4EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EC3FC3D8264BBF3000820D84 /* Orthers */,
 				EC72AA2E2648DEF600E2F4EC /* Cores */,
 			);
 			path = Controllers;
@@ -228,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC72AA252648DD8E00E2F4EC /* Build configuration list for PBXNativeTarget "SCPlayer" */;
 			buildPhases = (
+				EC6E64D2264D068B00C9037B /* Run SwiftLint */,
 				EC72AA0D2648DD8B00E2F4EC /* Sources */,
 				EC72AA0E2648DD8B00E2F4EC /* Frameworks */,
 				EC72AA0F2648DD8B00E2F4EC /* Resources */,
@@ -288,6 +311,7 @@
 			files = (
 				EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */,
 				ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */,
+				EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */,
 				EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */,
 				EC6B4393264B6BBA00D0825A /* HomeListTrackCollectionViewCell.xib in Resources */,
 				ECDA95712648E80D00970744 /* SearchViewController.xib in Resources */,
@@ -298,6 +322,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EC6E64D2264D068B00C9037B /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC72AA0D2648DD8B00E2F4EC /* Sources */ = {
@@ -320,6 +365,7 @@
 				EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */,
 				EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */,
 				EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */,
+				EC3FC3DC264BBF6500820D84 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,14 +15,12 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func configureTabBar() {
-        
         viewControllers = [
             configChildNavigationController(vc: HomeViewController(), item: TabbarItem.home.item),
             configChildNavigationController(vc: SearchViewController(), item: TabbarItem.search.item),
             configChildNavigationController(vc: LibraryViewController(), item: TabbarItem.library.item),
         ]
         setViewControllers(viewControllers, animated: true)
-        
     }
     
     private func configChildNavigationController(vc: UIViewController, item: UITabBarItem) -> UINavigationController {
@@ -31,5 +29,4 @@ final class TabBarViewController: UITabBarController {
         navController.navigationBar.prefersLargeTitles = true
         return navController
     }
-    
 }
