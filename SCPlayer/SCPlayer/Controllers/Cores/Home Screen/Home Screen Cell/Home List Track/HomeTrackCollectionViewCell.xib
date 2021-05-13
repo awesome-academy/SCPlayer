@@ -56,6 +56,11 @@
                 <constraint firstItem="DoC-Qr-87P" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="tbv-Og-6Cp"/>
             </constraints>
             <size key="customSize" width="185" height="233"/>
+            <connections>
+                <outlet property="artistLabel" destination="vJv-nw-7Mm" id="KNh-eC-X4s"/>
+                <outlet property="mainImageView" destination="DoC-Qr-87P" id="6I9-Xp-vaW"/>
+                <outlet property="songNameLabel" destination="0bb-De-F6f" id="dab-06-RWB"/>
+            </connections>
             <point key="canvasLocation" x="-171.73913043478262" y="-39.174107142857139"/>
         </collectionViewCell>
     </objects>

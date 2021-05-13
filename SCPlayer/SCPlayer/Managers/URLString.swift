@@ -12,7 +12,6 @@ let clientID = "7c8ae3eed403b61716254856c4155475"
 
 enum URLString {
     case tracks
-    
     var url: String {
         switch self {
         case .tracks:
@@ -20,4 +19,3 @@ enum URLString {
         }
     }
 }
-
