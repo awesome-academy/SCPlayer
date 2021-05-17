@@ -16,15 +16,15 @@ final class TabBarViewController: UITabBarController {
     
     private func configureTabBar() {
         viewControllers = [
-            configChildNavigationController(vc: HomeViewController(), item: TabbarItem.home.item),
-            configChildNavigationController(vc: SearchViewController(), item: TabbarItem.search.item),
-            configChildNavigationController(vc: LibraryViewController(), item: TabbarItem.library.item),
+            configChildNavigationController(viewController: HomeViewController(), item: TabbarItem.home.item),
+            configChildNavigationController(viewController: SearchViewController(), item: TabbarItem.search.item),
+            configChildNavigationController(viewController: LibraryViewController(), item: TabbarItem.library.item)
         ]
         setViewControllers(viewControllers, animated: true)
     }
     
-    private func configChildNavigationController(vc: UIViewController, item: UITabBarItem) -> UINavigationController {
-        let navController = UINavigationController(rootViewController: vc)
+    private func configChildNavigationController(viewController: UIViewController, item: UITabBarItem) -> UINavigationController {
+        let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem = item
         navController.navigationBar.prefersLargeTitles = true
         return navController

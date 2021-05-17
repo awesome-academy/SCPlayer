@@ -11,12 +11,12 @@ final class APIServices {
     
     static let shared = APIServices()
     
-    public func fetchTracksJSON(completion: @escaping (Result<[Track], Error>) -> ()) {
+    public func fetchTracksJSON(completion: @escaping (Result<[Track], Error>) -> Void) {
         let urlString = URLString.tracks.url
         guard let url = URL(string: urlString) else {
             return
         }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 completion(.failure(error))
                 return

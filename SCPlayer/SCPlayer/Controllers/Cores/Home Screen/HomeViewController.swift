@@ -14,7 +14,6 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var homeCollectionView: UICollectionView!
     
     private var listGenre = [String]()
-    private var numberOfEachGenre = [Int]()
     private var listTrack = [Track]()
     
     override func viewDidLoad() {
