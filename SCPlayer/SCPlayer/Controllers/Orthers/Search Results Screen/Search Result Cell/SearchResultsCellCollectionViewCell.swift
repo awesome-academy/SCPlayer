@@ -26,7 +26,9 @@ final class SearchResultsCellCollectionViewCell: UICollectionViewCell, NibReusab
         artistLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
     
-    public func configure() {
-        //Configure Cell When Load Data
+    public func configure(track: Track) {
+        imageView.loadImage(urlString: track.user?.avatarUrl)
+        songNameLabel.text = track.title
+        artistLabel.text = track.user?.username
     }
 }

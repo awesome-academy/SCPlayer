@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="searchButton" destination="rEa-mO-om0" id="Xw1-Hf-1fC"/>
                 <outlet property="searchCollectionView" destination="I4k-N3-JIz" id="8jp-Wk-MpG"/>
+                <outlet property="spinner" destination="7jP-g6-ShM" id="f39-Vj-b4w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,15 +45,24 @@
                         <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                     </state>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7jP-g6-ShM">
+                    <rect key="frame" x="147" y="388" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="2Hf-vQ-Noz"/>
+                        <constraint firstAttribute="width" constant="120" id="2kM-BE-lXi"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rEa-mO-om0" secondAttribute="trailing" constant="20" id="Qph-6B-bC1"/>
+                <constraint firstItem="7jP-g6-ShM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RdR-rG-QxL"/>
                 <constraint firstAttribute="bottom" secondItem="I4k-N3-JIz" secondAttribute="bottom" id="SE6-Wn-ARp"/>
                 <constraint firstItem="I4k-N3-JIz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wwt-oP-83J"/>
                 <constraint firstItem="I4k-N3-JIz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XoR-Jf-2fd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I4k-N3-JIz" secondAttribute="trailing" id="cpu-WD-iie"/>
+                <constraint firstItem="7jP-g6-ShM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dbR-Kw-Jza"/>
                 <constraint firstItem="rEa-mO-om0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fDM-zt-Stz"/>
                 <constraint firstItem="rEa-mO-om0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="rTr-lm-gQ7"/>
                 <constraint firstItem="I4k-N3-JIz" firstAttribute="top" secondItem="rEa-mO-om0" secondAttribute="bottom" constant="20" id="vaU-eN-8CX"/>

@@ -32,6 +32,7 @@
 		EC79C75226522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */; };
 		EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */; };
 		EC79C75626522FB00063EB28 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */; };
+		EC79C758265260A80063EB28 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C757265260A80063EB28 /* UIImageView++.swift */; };
 		ECA8AC8A265156AD008769F1 /* SearchByGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */; };
 		ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */; };
 		ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95692648E7EE00970744 /* HomeViewController.swift */; };
@@ -69,6 +70,7 @@
 		EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
+		EC79C757265260A80063EB28 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
 		ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByGenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECDA95692648E7EE00970744 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				EC72AA162648DD8B00E2F4EC /* SceneDelegate.swift */,
 				EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */,
 				EC6B4398264B70F000D0825A /* UIView+.swift */,
+				EC79C757265260A80063EB28 /* UIImageView++.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */,
+				EC79C758265260A80063EB28 /* UIImageView++.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
 				EC6B439D264B75E300D0825A /* HomeTrackCollectionViewCell.swift in Sources */,
