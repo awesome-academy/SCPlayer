@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SCPlayer" customModuleProvider="target">
             <connections>
                 <outlet property="homeCollectionView" destination="dqH-Wy-cIz" id="ejm-Mq-QeH"/>
+                <outlet property="spinner" destination="ghm-kO-fau" id="0kK-aR-SFN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,12 +30,21 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ghm-kO-fau">
+                    <rect key="frame" x="147" y="388" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="MxP-Yb-pmg"/>
+                        <constraint firstAttribute="width" constant="120" id="dKD-6M-Ekb"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dqH-Wy-cIz" secondAttribute="trailing" id="7yD-9F-gYt"/>
+                <constraint firstItem="ghm-kO-fau" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ETP-2F-NAT"/>
                 <constraint firstItem="dqH-Wy-cIz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KuO-mG-ikd"/>
+                <constraint firstItem="ghm-kO-fau" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PTD-iE-DL5"/>
                 <constraint firstItem="dqH-Wy-cIz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SjZ-OE-QoY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dqH-Wy-cIz" secondAttribute="bottom" id="tE1-N8-PTs"/>
             </constraints>

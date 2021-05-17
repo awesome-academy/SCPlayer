@@ -12,6 +12,7 @@ import Reusable
 final class HomeViewController: UIViewController {
 
     @IBOutlet private weak var homeCollectionView: UICollectionView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     private var listGenre = [String]()
     private var listTrack = [Track]()
@@ -26,6 +27,7 @@ final class HomeViewController: UIViewController {
     private func configure() {
         title = "Home"
         navigationItem.largeTitleDisplayMode = .always
+        spinner.startAnimating()
     }
     
     private func configureHomeCollectionView() {
@@ -55,6 +57,8 @@ final class HomeViewController: UIViewController {
             .filter { $0 != "NIL" && $0 != "" }
         listGenre.insert("All Songs", at: 0)
         DispatchQueue.main.async {
+            self.spinner.stopAnimating()
+            self.spinner.isHidden = true
             self.homeCollectionView.reloadData()
         }
     }

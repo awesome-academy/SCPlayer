@@ -13,6 +13,9 @@ final class SearchResultsViewController: UIViewController {
     @IBOutlet private weak var searchResultsCollectionView: UICollectionView!
     
     private var listTrackResult = [Track]()
+    private var listTrack = [Track]()
+    private var selfGenre = String()
+    private var listTempDataForSearch = [Track]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,7 @@ final class SearchResultsViewController: UIViewController {
     
     private func configureSearchBar() {
         searchBar.placeholder = "Search your songs ..."
+        searchBar.delegate = self
     }
     
     private func configureResultsCollectionView() {
@@ -37,6 +41,38 @@ final class SearchResultsViewController: UIViewController {
             $0.dataSource = self
             $0.register(cellType: SearchResultsCellCollectionViewCell.self)
         }
+    }
+    
+    private func searchByText(text: String) {
+        listTrackResult.removeAll()
+        listTrackResult = listTempDataForSearch.filter { $0.title?.lowercased().contains(text.lowercased()) ?? false
+        }
+        if text.isEmpty {
+            listTrackResult = listTempDataForSearch
+        }
+        DispatchQueue.main.async {
+            self.searchResultsCollectionView.reloadData()
+        }
+    }
+    
+    private func loadData(genre: String) {
+        switch genre {
+        case "All Songs":
+            listTrackResult.removeAll()
+            listTrackResult = listTrack
+        case "Favorites":
+            listTrackResult.removeAll()
+        default:
+            listTrackResult.removeAll()
+            listTrackResult = listTrack.filter { $0.genre == genre }
+        }
+        listTempDataForSearch = listTrackResult
+    }
+    
+    public func getData(genre: String, allTrack: [Track]) {
+        listTrack = allTrack
+        selfGenre = genre
+        loadData(genre: selfGenre)
     }
 }
 
@@ -47,6 +83,7 @@ extension SearchResultsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchResultsCellCollectionViewCell.self)
+        cell.configure(track: listTrackResult[indexPath.row])
         return cell
     }
 }
@@ -75,5 +112,11 @@ extension SearchResultsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 10, bottom: 0, right: 10)
+    }
+}
+
+extension SearchResultsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchByText(text: searchText)
     }
 }
