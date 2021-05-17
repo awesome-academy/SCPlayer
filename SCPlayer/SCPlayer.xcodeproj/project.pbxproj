@@ -28,10 +28,12 @@
 		EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */; };
 		EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1F2648DD8E00E2F4EC /* LaunchScreen.storyboard */; };
 		EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */; };
+		EC79C75126522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C74F26522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift */; };
+		EC79C75226522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */; };
+		EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */; };
+		EC79C75626522FB00063EB28 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */; };
 		ECA8AC8A265156AD008769F1 /* SearchByGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */; };
 		ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */; };
-		ECA8AC8F2651787D008769F1 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8AC8D2651787D008769F1 /* SearchResultsViewController.swift */; };
-		ECA8AC902651787D008769F1 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA8AC8E2651787D008769F1 /* SearchResultsViewController.xib */; };
 		ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95692648E7EE00970744 /* HomeViewController.swift */; };
 		ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDA956A2648E7EE00970744 /* HomeViewController.xib */; };
 		ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA956E2648E80D00970744 /* SearchViewController.swift */; };
@@ -63,10 +65,12 @@
 		EC72AA202648DD8E00E2F4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC72AA222648DD8E00E2F4EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EC79C74F26522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
 		ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByGenreCollectionViewCell.xib; sourceTree = "<group>"; };
-		ECA8AC8D2651787D008769F1 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
-		ECA8AC8E2651787D008769F1 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
 		ECDA95692648E7EE00970744 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECDA956A2648E7EE00970744 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		ECDA956E2648E80D00970744 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +219,15 @@
 			path = Cores;
 			sourceTree = "<group>";
 		};
+		EC79C74E26522CC50063EB28 /* Search Result Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC79C74F26522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift */,
+				EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */,
+			);
+			path = "Search Result Cell";
+			sourceTree = "<group>";
+		};
 		ECA8AC8626515643008769F1 /* Search Screen Celll */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,8 +248,9 @@
 		ECA8AC8C2651785D008769F1 /* Search Results Screen */ = {
 			isa = PBXGroup;
 			children = (
-				ECA8AC8D2651787D008769F1 /* SearchResultsViewController.swift */,
-				ECA8AC8E2651787D008769F1 /* SearchResultsViewController.xib */,
+				EC79C74E26522CC50063EB28 /* Search Result Cell */,
+				EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */,
+				EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */,
 			);
 			path = "Search Results Screen";
 			sourceTree = "<group>";
@@ -348,13 +362,14 @@
 				EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */,
 				ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */,
 				EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */,
+				EC79C75226522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib in Resources */,
 				EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */,
 				EC6B4393264B6BBA00D0825A /* HomeListTrackCollectionViewCell.xib in Resources */,
 				ECDA95712648E80D00970744 /* SearchViewController.xib in Resources */,
 				EC6B439E264B75E300D0825A /* HomeTrackCollectionViewCell.xib in Resources */,
 				EC6B4397264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib in Resources */,
 				ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */,
-				ECA8AC902651787D008769F1 /* SearchResultsViewController.xib in Resources */,
+				EC79C75626522FB00063EB28 /* SearchResultsViewController.xib in Resources */,
 				ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,12 +414,13 @@
 				ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */,
 				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
 				EC6B4392264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift in Sources */,
-				ECA8AC8F2651787D008769F1 /* SearchResultsViewController.swift in Sources */,
 				EC6B4399264B70F000D0825A /* UIView+.swift in Sources */,
 				EC6B4396264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift in Sources */,
+				EC79C75126522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift in Sources */,
 				EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */,
 				EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */,
 				EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */,
+				EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */,
 				EC3FC3DC264BBF6500820D84 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
