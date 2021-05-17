@@ -14,6 +14,7 @@ struct Track: Codable {
     let permalinkUrl: String?
     let streamURL: String?
     let user: User?
+    var isFavorites: Bool?
     enum SongKeys: String, CodingKey {
         case trackID = "id"
         case genre = "genre"
@@ -21,6 +22,7 @@ struct Track: Codable {
         case permalinkUrl = "permalink_url"
         case streamURL = "stream_url"
         case user = "user"
+        case isFavorites
     }
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SongKeys.self)
@@ -30,5 +32,6 @@ struct Track: Codable {
         permalinkUrl = try container.decode(String?.self, forKey: .permalinkUrl)
         streamURL = try container.decode(String?.self, forKey: .streamURL)
         user = try container.decode(User?.self, forKey: .user)
+        isFavorites = nil
     }
 }

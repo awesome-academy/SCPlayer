@@ -10,6 +10,8 @@
 		EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC243AD4264A7FC400B956F3 /* APIKey.swift */; };
 		EC3FC3DC264BBF6500820D84 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */; };
 		EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */; };
+		EC47C13026535436005C52B9 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47C12F26535436005C52B9 /* Database.swift */; };
+		EC47C13426535458005C52B9 /* TrackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47C13326535458005C52B9 /* TrackEntity.swift */; };
 		EC6519E2264A303F007BA2FD /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E0264A303F007BA2FD /* URLString.swift */; };
 		EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E1264A303F007BA2FD /* APIServices.swift */; };
 		EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E4264A3048007BA2FD /* TrackModel.swift */; };
@@ -32,7 +34,8 @@
 		EC79C75226522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */; };
 		EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */; };
 		EC79C75626522FB00063EB28 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */; };
-		EC79C758265260A80063EB28 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C757265260A80063EB28 /* UIImageView++.swift */; };
+		EC79C758265260A80063EB28 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C757265260A80063EB28 /* UIImageView+.swift */; };
+		EC79C75B26527A090063EB28 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = EC79C75A26527A090063EB28 /* SQLite */; };
 		ECA8AC8A265156AD008769F1 /* SearchByGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */; };
 		ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */; };
 		ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95692648E7EE00970744 /* HomeViewController.swift */; };
@@ -48,6 +51,8 @@
 		EC243AD4264A7FC400B956F3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		EC47C12F26535436005C52B9 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		EC47C13326535458005C52B9 /* TrackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackEntity.swift; sourceTree = "<group>"; };
 		EC6519E0264A303F007BA2FD /* URLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
 		EC6519E1264A303F007BA2FD /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		EC6519E4264A3048007BA2FD /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
@@ -70,7 +75,7 @@
 		EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
-		EC79C757265260A80063EB28 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
+		EC79C757265260A80063EB28 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByGenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECDA95692648E7EE00970744 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC79C75B26527A090063EB28 /* SQLite in Frameworks */,
 				EC6B43A1264B8B2900D0825A /* Then in Frameworks */,
 				EC6B43A4264B8B4100D0825A /* Reusable in Frameworks */,
 			);
@@ -111,6 +117,15 @@
 				EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */,
 			);
 			path = "Player Screen";
+			sourceTree = "<group>";
+		};
+		EC47C12E2653541B005C52B9 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				EC47C12F26535436005C52B9 /* Database.swift */,
+				EC47C13326535458005C52B9 /* TrackEntity.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		EC6519DE264A2FF3007BA2FD /* Managers */ = {
@@ -173,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				EC72AA2D2648DDE800E2F4EC /* Resources */,
+				EC47C12E2653541B005C52B9 /* Database */,
 				EC6519DF264A2FFB007BA2FD /* Models */,
 				EC6519DE264A2FF3007BA2FD /* Managers */,
 				EC72AA292648DDA300E2F4EC /* Views */,
@@ -206,7 +222,7 @@
 				EC72AA162648DD8B00E2F4EC /* SceneDelegate.swift */,
 				EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */,
 				EC6B4398264B70F000D0825A /* UIView+.swift */,
-				EC79C757265260A80063EB28 /* UIImageView++.swift */,
+				EC79C757265260A80063EB28 /* UIImageView+.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -316,6 +332,7 @@
 			packageProductDependencies = (
 				EC6B43A0264B8B2900D0825A /* Then */,
 				EC6B43A3264B8B4100D0825A /* Reusable */,
+				EC79C75A26527A090063EB28 /* SQLite */,
 			);
 			productName = SCPlayer;
 			productReference = EC72AA112648DD8B00E2F4EC /* SCPlayer.app */;
@@ -347,6 +364,7 @@
 			packageReferences = (
 				EC6B439F264B8B2900D0825A /* XCRemoteSwiftPackageReference "Then" */,
 				EC6B43A2264B8B4100D0825A /* XCRemoteSwiftPackageReference "Reusable" */,
+				EC79C75926527A090063EB28 /* XCRemoteSwiftPackageReference "SQLite" */,
 			);
 			productRefGroup = EC72AA122648DD8B00E2F4EC /* Products */;
 			projectDirPath = "";
@@ -406,7 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */,
-				EC79C758265260A80063EB28 /* UIImageView++.swift in Sources */,
+				EC79C758265260A80063EB28 /* UIImageView+.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
 				EC6B439D264B75E300D0825A /* HomeTrackCollectionViewCell.swift in Sources */,
@@ -417,6 +435,7 @@
 				EC72AA172648DD8B00E2F4EC /* SceneDelegate.swift in Sources */,
 				ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */,
 				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
+				EC47C13026535436005C52B9 /* Database.swift in Sources */,
 				EC6B4392264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift in Sources */,
 				EC6B4399264B70F000D0825A /* UIView+.swift in Sources */,
 				EC6B4396264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift in Sources */,
@@ -425,6 +444,7 @@
 				EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */,
 				EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */,
 				EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */,
+				EC47C13426535458005C52B9 /* TrackEntity.swift in Sources */,
 				EC3FC3DC264BBF6500820D84 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +657,14 @@
 				minimumVersion = 4.1.1;
 			};
 		};
+		EC79C75926527A090063EB28 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -649,6 +677,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC6B43A2264B8B4100D0825A /* XCRemoteSwiftPackageReference "Reusable" */;
 			productName = Reusable;
+		};
+		EC79C75A26527A090063EB28 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC79C75926527A090063EB28 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

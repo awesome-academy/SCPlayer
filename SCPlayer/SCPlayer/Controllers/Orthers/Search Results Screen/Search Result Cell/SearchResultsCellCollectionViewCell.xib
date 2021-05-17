@@ -43,7 +43,7 @@
                             <constraint firstAttribute="height" constant="50" id="OLV-ts-ilq"/>
                             <constraint firstAttribute="width" constant="50" id="oNR-8F-cB6"/>
                         </constraints>
-                        <state key="normal" image="greenHeartIcon"/>
+                        <state key="normal" image="unlikeHeart"/>
                     </button>
                 </subviews>
             </view>
@@ -67,6 +67,7 @@
             <connections>
                 <outlet property="artistLabel" destination="7g2-7q-elP" id="hDa-oF-hyi"/>
                 <outlet property="imageView" destination="41W-4c-QKD" id="Bul-fu-NN1"/>
+                <outlet property="likeButton" destination="kOS-cg-SA6" id="ggB-CP-Mbb"/>
                 <outlet property="songNameLabel" destination="7l2-nZ-aLo" id="8tV-0D-5lt"/>
             </connections>
             <point key="canvasLocation" x="353.62318840579712" y="91.071428571428569"/>
@@ -74,6 +75,6 @@
     </objects>
     <resources>
         <image name="avt" width="50" height="50"/>
-        <image name="greenHeartIcon" width="750" height="750"/>
+        <image name="unlikeHeart" width="34" height="30.5"/>
     </resources>
 </document>

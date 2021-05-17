@@ -7,12 +7,14 @@
 
 import UIKit
 import Reusable
+import SQLite
 
 final class SearchResultsCellCollectionViewCell: UICollectionViewCell, NibReusable {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var songNameLabel: UILabel!
     @IBOutlet private weak var artistLabel: UILabel!
+    @IBOutlet private weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -26,14 +26,14 @@ extension UIImageView {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
+        URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
             guard error == nil, let data = data, let image = UIImage(data: data) else {
                 print("Couldn't download image: \(String(describing: error))")
                 return
             }
             imageCache.setObject(image, forKey: urlString as AnyObject)
             DispatchQueue.main.async {
-                self.image = image
+                self?.image = image
             }
         }.resume()
     }
