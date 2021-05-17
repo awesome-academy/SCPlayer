@@ -78,6 +78,7 @@ final class SearchViewController: UIViewController {
     
     @objc private func didTapSearchButton() {
         let viewController = SearchResultsViewController()
+        viewController.title = "All Songs"
         navigationController?.pushViewController(viewController, animated: true)
     }    
 }
@@ -97,6 +98,7 @@ extension SearchViewController: UICollectionViewDataSource {
 extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = SearchResultsViewController()
+        viewController.title = listGenre[indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
