@@ -24,22 +24,8 @@ final class HomeTrackCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     public func configureCell(track: Track) {
-        guard let avatarUrlString = track.user?.avatarUrl else {
-            return
-        }
-        setImage(urlString: avatarUrlString)
+        mainImageView.loadImage(urlString: track.user?.avatarUrl)
         songNameLabel.text = track.title
         artistLabel.text = track.user?.username
-    }
-    
-    private func setImage(urlString: String) {
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let data = try? Data(contentsOf: url)
-        guard let contentData = data else {
-            return
-        }
-        mainImageView.image = UIImage(data: contentData)
     }
 }

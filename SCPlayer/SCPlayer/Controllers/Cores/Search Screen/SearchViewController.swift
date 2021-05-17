@@ -11,6 +11,7 @@ final class SearchViewController: UIViewController {
   
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var searchCollectionView: UICollectionView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     private var searchCellWidthSize = CGFloat()
     private var searchCellHeightSize = CGFloat()
@@ -26,6 +27,7 @@ final class SearchViewController: UIViewController {
     private func configure() {
         title = "Search"
         navigationItem.largeTitleDisplayMode = .always
+        spinner.startAnimating()
         searchCellWidthSize = view.width/2 - 30
         searchCellHeightSize = 100
         configureSearchButton()
@@ -67,6 +69,8 @@ final class SearchViewController: UIViewController {
         listGenre.insert("All Songs", at: 0)
         listGenre.insert("Favorites", at: 0)
         DispatchQueue.main.async {
+            self.spinner.stopAnimating()
+            self.spinner.isHidden = true
             self.searchCollectionView.reloadData()
         }
     }
@@ -79,8 +83,9 @@ final class SearchViewController: UIViewController {
     @objc private func didTapSearchButton() {
         let viewController = SearchResultsViewController()
         viewController.title = "All Songs"
+        viewController.getData(genre: "All Songs", allTrack: listTrack)
         navigationController?.pushViewController(viewController, animated: true)
-    }    
+    }
 }
 
 extension SearchViewController: UICollectionViewDataSource {
@@ -99,6 +104,7 @@ extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = SearchResultsViewController()
         viewController.title = listGenre[indexPath.row]
+        viewController.getData(genre: listGenre[indexPath.row], allTrack: listTrack)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
