@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC243AD4264A7FC400B956F3 /* APIKey.swift */; };
 		EC3FC3DC264BBF6500820D84 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */; };
 		EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */; };
+		EC47C1422653678F005C52B9 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47C1412653678F005C52B9 /* Database.swift */; };
+		EC47C14826536887005C52B9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47C14726536887005C52B9 /* APIKey.swift */; };
 		EC6519E2264A303F007BA2FD /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E0264A303F007BA2FD /* URLString.swift */; };
 		EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E1264A303F007BA2FD /* APIServices.swift */; };
 		EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E4264A3048007BA2FD /* TrackModel.swift */; };
@@ -32,7 +33,7 @@
 		EC79C75226522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */; };
 		EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */; };
 		EC79C75626522FB00063EB28 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */; };
-		EC79C758265260A80063EB28 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C757265260A80063EB28 /* UIImageView++.swift */; };
+		EC79C758265260A80063EB28 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C757265260A80063EB28 /* UIImageView+.swift */; };
 		ECA8AC8A265156AD008769F1 /* SearchByGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */; };
 		ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */; };
 		ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95692648E7EE00970744 /* HomeViewController.swift */; };
@@ -45,9 +46,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC243AD4264A7FC400B956F3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		EC47C1412653678F005C52B9 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		EC47C14726536887005C52B9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		EC6519E0264A303F007BA2FD /* URLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
 		EC6519E1264A303F007BA2FD /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		EC6519E4264A3048007BA2FD /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
-		EC79C757265260A80063EB28 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
+		EC79C757265260A80063EB28 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByGenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECDA95692648E7EE00970744 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -113,12 +115,20 @@
 			path = "Player Screen";
 			sourceTree = "<group>";
 		};
+		EC47C13D2653673F005C52B9 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				EC47C1412653678F005C52B9 /* Database.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		EC6519DE264A2FF3007BA2FD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				EC6519E1264A303F007BA2FD /* APIServices.swift */,
 				EC6519E0264A303F007BA2FD /* URLString.swift */,
-				EC243AD4264A7FC400B956F3 /* APIKey.swift */,
+				EC47C14726536887005C52B9 /* APIKey.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -173,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				EC72AA2D2648DDE800E2F4EC /* Resources */,
+				EC47C13D2653673F005C52B9 /* Database */,
 				EC6519DF264A2FFB007BA2FD /* Models */,
 				EC6519DE264A2FF3007BA2FD /* Managers */,
 				EC72AA292648DDA300E2F4EC /* Views */,
@@ -206,7 +217,7 @@
 				EC72AA162648DD8B00E2F4EC /* SceneDelegate.swift */,
 				EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */,
 				EC6B4398264B70F000D0825A /* UIView+.swift */,
-				EC79C757265260A80063EB28 /* UIImageView++.swift */,
+				EC79C757265260A80063EB28 /* UIImageView+.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -406,7 +417,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */,
-				EC79C758265260A80063EB28 /* UIImageView++.swift in Sources */,
+				EC79C758265260A80063EB28 /* UIImageView+.swift in Sources */,
+				EC47C14826536887005C52B9 /* APIKey.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
 				EC6B439D264B75E300D0825A /* HomeTrackCollectionViewCell.swift in Sources */,
@@ -417,12 +429,12 @@
 				EC72AA172648DD8B00E2F4EC /* SceneDelegate.swift in Sources */,
 				ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */,
 				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
+				EC47C1422653678F005C52B9 /* Database.swift in Sources */,
 				EC6B4392264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift in Sources */,
 				EC6B4399264B70F000D0825A /* UIView+.swift in Sources */,
 				EC6B4396264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift in Sources */,
 				EC79C75126522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift in Sources */,
 				EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */,
-				EC243AD5264A7FC400B956F3 /* APIKey.swift in Sources */,
 				EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */,
 				EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */,
 				EC3FC3DC264BBF6500820D84 /* PlayerViewController.swift in Sources */,
