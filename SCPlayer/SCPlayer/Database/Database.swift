@@ -1,0 +1,113 @@
+//
+//  TrackDatabase.swift
+//  SCPlayer
+//
+//  Created by Thuận Nguyễn Văn on 18/05/2021.
+//
+
+import Foundation
+import SQLite3
+
+class TrackDatabase {
+    
+    static let shared = TrackDatabase()
+    
+    private var database: OpaquePointer?
+   
+    private init() {
+        database = createDatabase()
+    }
+    
+    func createDatabase() -> OpaquePointer? {
+        let path = "likeTrack.sqlite3"
+        var database: OpaquePointer?
+        
+        do {
+            let databasePath = try FileManager.default.url(for: .documentDirectory,
+                                                           in: .userDomainMask,
+                                                           appropriateFor: nil,
+                                                           create: false).appendingPathExtension(path)
+            if sqlite3_open(databasePath.path, &database) == SQLITE_OK {
+                print("Successfully opened connection to database at \(databasePath)")
+                return database
+            } else {
+                print("Unable to open database.")
+                return nil
+            }
+        } catch {
+            print("Unable to open database.")
+            return nil
+        }
+    }
+    
+    func createTable() {
+        let createTableString =
+            """
+            CREATE TABLE IF NOT EXISTS trackTable ( trackId INT PRIMARY KEY NOT NULL );
+            """
+        var createTableStatement: OpaquePointer?
+        
+        if sqlite3_prepare_v2(database, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
+            if sqlite3_step(createTableStatement) == SQLITE_DONE {
+                print("\ntrackTable table created.")
+            } else {
+                print("\ntrackTable table is not created.")
+            }
+        } else {
+            print("\nCreate table statement is not prepared.")
+        }
+        sqlite3_finalize(createTableStatement)
+    }
+    
+    func insert(trackId: Int) {
+        let insertStatementString = "INSERT INTO trackTable (trackId) VALUES (?);"
+        var insertStatement: OpaquePointer?
+        
+        if sqlite3_prepare_v2(database, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(insertStatement, 1, Int32(trackId))
+            if sqlite3_step(insertStatement) == SQLITE_DONE {
+                print("\nSuccessfully inserted row.")
+            } else {
+                print("\nCould not insert row.")
+            }
+        } else {
+            print("\nInsert statement is not prepared.")
+          }
+        sqlite3_finalize(insertStatement)
+    }
+    
+    func queryAll() -> [Int]? {
+        let queryStatementString = "SELECT * FROM trackTable;"
+        var queryStatement: OpaquePointer?
+        var list = [Int]()
+        
+        if sqlite3_prepare_v2(database, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                let trackId = sqlite3_column_int(queryStatement, 0)
+                list.append(Int(trackId))
+            }
+            sqlite3_finalize(queryStatement)
+            return list
+        } else {
+            let errorMessage = String(cString: sqlite3_errmsg(database))
+            print("\nQuery is not prepared \(errorMessage)")
+            sqlite3_finalize(queryStatement)
+            return nil
+        }
+    }
+    
+    func delete(trackId: Int) {
+        let deleteStatementString = "DELETE FROM trackTable WHERE trackId = \(Int32(trackId));"
+        var deleteStatement: OpaquePointer?
+        if sqlite3_prepare_v2(database, deleteStatementString, -1, &deleteStatement, nil) == SQLITE_OK {
+          if sqlite3_step(deleteStatement) == SQLITE_DONE {
+            print("\nSuccessfully deleted row.")
+          } else {
+            print("\nCould not delete row.")
+          }
+        } else {
+          print("\nDelete statement could not be prepared")
+        }
+        sqlite3_finalize(deleteStatement)
+    }
+}
