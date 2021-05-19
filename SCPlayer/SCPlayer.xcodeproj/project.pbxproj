@@ -29,6 +29,12 @@
 		EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */; };
 		EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1F2648DD8E00E2F4EC /* LaunchScreen.storyboard */; };
 		EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */; };
+		EC763CD32654FE9F00A148FF /* PlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC763CD12654FE9F00A148FF /* PlaylistCollectionViewCell.swift */; };
+		EC763CD42654FE9F00A148FF /* PlaylistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC763CD22654FE9F00A148FF /* PlaylistCollectionViewCell.xib */; };
+		EC763CD82654FFB800A148FF /* TrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC763CD62654FFB800A148FF /* TrackCollectionViewCell.swift */; };
+		EC763CD92654FFB800A148FF /* TrackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC763CD72654FFB800A148FF /* TrackCollectionViewCell.xib */; };
+		EC763CDC265507DB00A148FF /* AddPlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC763CDA265507DB00A148FF /* AddPlaylistCollectionViewCell.swift */; };
+		EC763CDD265507DB00A148FF /* AddPlaylistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC763CDB265507DB00A148FF /* AddPlaylistCollectionViewCell.xib */; };
 		EC79C75126522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C74F26522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift */; };
 		EC79C75226522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */; };
 		EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */; };
@@ -68,6 +74,12 @@
 		EC72AA202648DD8E00E2F4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC72AA222648DD8E00E2F4EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EC763CD12654FE9F00A148FF /* PlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC763CD22654FE9F00A148FF /* PlaylistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC763CD62654FFB800A148FF /* TrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC763CD72654FFB800A148FF /* TrackCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC763CDA265507DB00A148FF /* AddPlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC763CDB265507DB00A148FF /* AddPlaylistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlaylistCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC79C74F26522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC79C75026522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC79C75326522FB00063EB28 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +245,26 @@
 			path = Cores;
 			sourceTree = "<group>";
 		};
+		EC763CD02654FE7900A148FF /* Playlist Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC763CD12654FE9F00A148FF /* PlaylistCollectionViewCell.swift */,
+				EC763CD22654FE9F00A148FF /* PlaylistCollectionViewCell.xib */,
+				EC763CDA265507DB00A148FF /* AddPlaylistCollectionViewCell.swift */,
+				EC763CDB265507DB00A148FF /* AddPlaylistCollectionViewCell.xib */,
+			);
+			path = "Playlist Cell";
+			sourceTree = "<group>";
+		};
+		EC763CD52654FF8B00A148FF /* Track Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC763CD62654FFB800A148FF /* TrackCollectionViewCell.swift */,
+				EC763CD72654FFB800A148FF /* TrackCollectionViewCell.xib */,
+			);
+			path = "Track Cell";
+			sourceTree = "<group>";
+		};
 		EC79C74E26522CC50063EB28 /* Search Result Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +324,8 @@
 		ECDA95722648E81400970744 /* Library Screen */ = {
 			isa = PBXGroup;
 			children = (
+				EC763CD52654FF8B00A148FF /* Track Cell */,
+				EC763CD02654FE7900A148FF /* Playlist Cell */,
 				ECDA95732648E82500970744 /* LibraryViewController.swift */,
 				ECDA95742648E82500970744 /* LibraryViewController.xib */,
 			);
@@ -373,14 +407,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC763CD92654FFB800A148FF /* TrackCollectionViewCell.xib in Resources */,
 				EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */,
 				ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */,
+				EC763CDD265507DB00A148FF /* AddPlaylistCollectionViewCell.xib in Resources */,
 				EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */,
 				EC79C75226522CF80063EB28 /* SearchResultsCellCollectionViewCell.xib in Resources */,
 				EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */,
 				EC6B4393264B6BBA00D0825A /* HomeListTrackCollectionViewCell.xib in Resources */,
 				ECDA95712648E80D00970744 /* SearchViewController.xib in Resources */,
 				EC6B439E264B75E300D0825A /* HomeTrackCollectionViewCell.xib in Resources */,
+				EC763CD42654FE9F00A148FF /* PlaylistCollectionViewCell.xib in Resources */,
 				EC6B4397264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib in Resources */,
 				ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */,
 				EC79C75626522FB00063EB28 /* SearchResultsViewController.xib in Resources */,
@@ -420,6 +457,7 @@
 				EC79C758265260A80063EB28 /* UIImageView+.swift in Sources */,
 				EC47C14826536887005C52B9 /* APIKey.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
+				EC763CD82654FFB800A148FF /* TrackCollectionViewCell.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
 				EC6B439D264B75E300D0825A /* HomeTrackCollectionViewCell.swift in Sources */,
 				EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */,
@@ -430,10 +468,12 @@
 				ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */,
 				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
 				EC47C1422653678F005C52B9 /* Database.swift in Sources */,
+				EC763CD32654FE9F00A148FF /* PlaylistCollectionViewCell.swift in Sources */,
 				EC6B4392264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift in Sources */,
 				EC6B4399264B70F000D0825A /* UIView+.swift in Sources */,
 				EC6B4396264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift in Sources */,
 				EC79C75126522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift in Sources */,
+				EC763CDC265507DB00A148FF /* AddPlaylistCollectionViewCell.swift in Sources */,
 				EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */,
 				EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */,
 				EC79C75526522FB00063EB28 /* SearchResultsViewController.swift in Sources */,
