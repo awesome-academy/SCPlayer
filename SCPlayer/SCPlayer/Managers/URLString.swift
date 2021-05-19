@@ -8,7 +8,7 @@
 import Foundation
 
 let baseURL = "https://api.soundcloud.com"
-let clientID = "7c8ae3eed403b61716254856c4155475"
+let clientID = APIKey.key.rawValue
 
 enum URLString {
     case tracks

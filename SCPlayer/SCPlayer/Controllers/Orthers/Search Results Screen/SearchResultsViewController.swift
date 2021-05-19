@@ -62,6 +62,7 @@ final class SearchResultsViewController: UIViewController {
             listTrackResult = listTrack
         case "Favorites":
             listTrackResult.removeAll()
+            listTrackResult = listTrack.filter { $0.isLiked }
         default:
             listTrackResult.removeAll()
             listTrackResult = listTrack.filter { $0.genre == genre }
@@ -69,8 +70,18 @@ final class SearchResultsViewController: UIViewController {
         listTempDataForSearch = listTrackResult
     }
     
+    private func loadLikedStatusData(tracks: [Track]) -> [Track] {
+        guard let listLikedTrackId = TrackDatabase.shared.queryAll() else {
+            return []
+        }
+        let listTrack = tracks.map { track in
+            return track.with { $0.isLiked = listLikedTrackId.contains($0.trackID ?? 0) }
+        }
+        return listTrack
+    }
+    
     public func getData(genre: String, allTrack: [Track]) {
-        listTrack = allTrack
+        listTrack = loadLikedStatusData(tracks: allTrack)
         selfGenre = genre
         loadData(genre: selfGenre)
     }
@@ -83,6 +94,7 @@ extension SearchResultsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SearchResultsCellCollectionViewCell.self)
+        cell.delegate = self
         cell.configure(track: listTrackResult[indexPath.row])
         return cell
     }
@@ -118,5 +130,15 @@ extension SearchResultsViewController: UICollectionViewDelegateFlowLayout {
 extension SearchResultsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchByText(text: searchText)
+    }
+}
+
+extension SearchResultsViewController: SearchResultsCellCollectionViewCellDelegate {
+    func reloadCollectionView(trackID: Int) {
+        listTrack = loadLikedStatusData(tracks: listTrack)
+        loadData(genre: selfGenre)
+        DispatchQueue.main.async {
+            self.searchResultsCollectionView.reloadData()
+        }
     }
 }
