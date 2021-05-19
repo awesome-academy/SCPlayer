@@ -79,6 +79,7 @@ extension HomeViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: HomeListTrackCollectionViewCell.self)
             let genre = listGenre[(indexPath.row - 1) / 2]
             cell.getData(genre: genre, listTrack: listTrack)
+            cell.delegate = self
             return cell
         }
     }
@@ -107,5 +108,13 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+}
+
+extension HomeViewController: HomeListTrackCollectionViewCellDelegate {
+    func pushViewController(track: Track) {
+        let viewController = PlayerViewController()
+        viewController.loadData(track: track)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
