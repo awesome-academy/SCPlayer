@@ -9,7 +9,7 @@ import UIKit
 import Reusable
 
 protocol SearchResultsCellCollectionViewCellDelegate: class {
-    func reloadCollectionView(trackID: Int)
+    func reloadCollectionView()
 }
 
 final class SearchResultsCellCollectionViewCell: UICollectionViewCell, NibReusable {
@@ -42,7 +42,7 @@ final class SearchResultsCellCollectionViewCell: UICollectionViewCell, NibReusab
         } else {
             TrackDatabase.shared.insert(trackId: trackId)
         }
-        delegate?.reloadCollectionView(trackID: trackId)
+        delegate?.reloadCollectionView()
     }
     
     public func configure(track: Track) {

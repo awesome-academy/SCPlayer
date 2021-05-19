@@ -22,6 +22,15 @@ final class SearchResultsViewController: UIViewController {
         configure()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listTrack = loadLikedStatusData(tracks: listTrack)
+        loadData(genre: selfGenre)
+        DispatchQueue.main.async {
+            self.searchResultsCollectionView.reloadData()
+        }
+    }
+    
     private func configure() {
         view.backgroundColor = .white
         navigationItem.largeTitleDisplayMode = .never
@@ -134,7 +143,7 @@ extension SearchResultsViewController: UISearchBarDelegate {
 }
 
 extension SearchResultsViewController: SearchResultsCellCollectionViewCellDelegate {
-    func reloadCollectionView(trackID: Int) {
+    func reloadCollectionView() {
         listTrack = loadLikedStatusData(tracks: listTrack)
         loadData(genre: selfGenre)
         DispatchQueue.main.async {
