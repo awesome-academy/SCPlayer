@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlayerViewController: UIViewController {
+final class PlayerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +16,9 @@ class PlayerViewController: UIViewController {
     
     private func configure() {
         view.backgroundColor = .systemGreen
+    }
+    
+    public func loadData(track: Track) {
+        
     }
 }

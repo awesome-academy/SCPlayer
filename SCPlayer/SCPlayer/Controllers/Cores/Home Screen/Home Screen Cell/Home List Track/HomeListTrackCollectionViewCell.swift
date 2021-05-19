@@ -9,6 +9,10 @@ import UIKit
 import Then
 import Reusable
 
+protocol HomeListTrackCollectionViewCellDelegate: class {
+    func pushViewController(track: Track)
+}
+
 final class HomeListTrackCollectionViewCell: UICollectionViewCell, NibReusable {
     
     @IBOutlet private weak var listTrackCollectionView: UICollectionView!
@@ -16,7 +20,8 @@ final class HomeListTrackCollectionViewCell: UICollectionViewCell, NibReusable {
     private var listAllTrack = [Track]()
     private var selfGenre = String()
     private var listTrackForGenre = [Track]()
-    
+    public weak var delegate: HomeListTrackCollectionViewCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         configureListTrackCollectionView()
@@ -64,7 +69,7 @@ extension HomeListTrackCollectionViewCell: UICollectionViewDataSource {
 
 extension HomeListTrackCollectionViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Push Player View Controller
+        delegate?.pushViewController(track: listTrackForGenre[indexPath.row])
     }
 }
 
