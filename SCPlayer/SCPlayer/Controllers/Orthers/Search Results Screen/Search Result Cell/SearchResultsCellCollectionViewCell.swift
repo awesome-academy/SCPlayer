@@ -38,9 +38,9 @@ final class SearchResultsCellCollectionViewCell: UICollectionViewCell, NibReusab
     
     @objc private func didTapLikeButton() {
         if isLiked {
-            TrackDatabase.shared.delete(trackId: trackId)
+            LikedTrackEntity.shared.deleteLikedTrack(trackId: trackId)
         } else {
-            TrackDatabase.shared.insert(trackId: trackId)
+            LikedTrackEntity.shared.insertNewLikedTrack(trackId: trackId)
         }
         delegate?.reloadCollectionView()
     }

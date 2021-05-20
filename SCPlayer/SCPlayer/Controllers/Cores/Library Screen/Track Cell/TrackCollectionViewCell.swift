@@ -36,7 +36,7 @@ final class TrackCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     @objc private func didTapLikeButton() {
-        TrackDatabase.shared.delete(trackId: trackId)
+        LikedTrackEntity.shared.deleteLikedTrack(trackId: trackId)
         delegate?.reloadCollectionView()
     }
     

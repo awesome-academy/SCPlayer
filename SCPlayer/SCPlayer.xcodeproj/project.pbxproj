@@ -33,6 +33,9 @@
 		EC72AA1E2648DD8E00E2F4EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1D2648DD8E00E2F4EC /* Assets.xcassets */; };
 		EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC72AA1F2648DD8E00E2F4EC /* LaunchScreen.storyboard */; };
 		EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */; };
+		EC73FC682655F83100F82771 /* LikedTrackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FC672655F83100F82771 /* LikedTrackEntity.swift */; };
+		EC73FC6A2656008F00F82771 /* PlaylistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FC692656008F00F82771 /* PlaylistEntity.swift */; };
+		EC73FC6C265600B700F82771 /* TrackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FC6B265600B700F82771 /* TrackEntity.swift */; };
 		EC763CD32654FE9F00A148FF /* PlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC763CD12654FE9F00A148FF /* PlaylistCollectionViewCell.swift */; };
 		EC763CD42654FE9F00A148FF /* PlaylistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC763CD22654FE9F00A148FF /* PlaylistCollectionViewCell.xib */; };
 		EC763CD82654FFB800A148FF /* TrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC763CD62654FFB800A148FF /* TrackCollectionViewCell.swift */; };
@@ -82,6 +85,9 @@
 		EC72AA202648DD8E00E2F4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC72AA222648DD8E00E2F4EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC72AA2F2648DF2600E2F4EC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EC73FC672655F83100F82771 /* LikedTrackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTrackEntity.swift; sourceTree = "<group>"; };
+		EC73FC692656008F00F82771 /* PlaylistEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistEntity.swift; sourceTree = "<group>"; };
+		EC73FC6B265600B700F82771 /* TrackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackEntity.swift; sourceTree = "<group>"; };
 		EC763CD12654FE9F00A148FF /* PlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC763CD22654FE9F00A148FF /* PlaylistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC763CD62654FFB800A148FF /* TrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				EC47C1412653678F005C52B9 /* Database.swift */,
+				EC73FC672655F83100F82771 /* LikedTrackEntity.swift */,
+				EC73FC692656008F00F82771 /* PlaylistEntity.swift */,
+				EC73FC6B265600B700F82771 /* TrackEntity.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -491,8 +500,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC73FC682655F83100F82771 /* LikedTrackEntity.swift in Sources */,
 				ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */,
+				EC73FC6A2656008F00F82771 /* PlaylistEntity.swift in Sources */,
 				EC79C758265260A80063EB28 /* UIImageView+.swift in Sources */,
+				EC73FC6C265600B700F82771 /* TrackEntity.swift in Sources */,
 				EC47C14826536887005C52B9 /* APIKey.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC237A9326555BC00053BBF9 /* PlaylistViewController.swift in Sources */,
