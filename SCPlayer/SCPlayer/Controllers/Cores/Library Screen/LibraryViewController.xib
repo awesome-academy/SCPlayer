@@ -11,8 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LibraryViewController" customModule="SCPlayer" customModuleProvider="target">
             <connections>
                 <outlet property="favoritesButton" destination="ueo-ET-ext" id="BbE-g1-FcP"/>
-                <outlet property="libraryButton" destination="Edn-JF-Ki3" id="37B-NH-g1t"/>
                 <outlet property="libraryCollectionView" destination="MXE-jU-4fe" id="HdZ-yy-ZHi"/>
+                <outlet property="playlistButton" destination="Edn-JF-Ki3" id="ez8-tu-wCU"/>
                 <outlet property="underFavoritesButtonView" destination="EcF-04-8z8" id="6G1-b3-j2w"/>
                 <outlet property="underLibraryButtonView" destination="FGC-HE-pc5" id="uXJ-uZ-MhI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,7 +41,7 @@
                         <constraint firstAttribute="width" constant="150" id="ilb-hk-WEt"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                    <state key="normal" title="Library">
+                    <state key="normal" title="Playlist">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>

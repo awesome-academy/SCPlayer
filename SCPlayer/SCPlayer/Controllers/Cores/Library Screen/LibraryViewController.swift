@@ -10,24 +10,37 @@ import UIKit
 final class LibraryViewController: UIViewController {
 
     @IBOutlet private weak var favoritesButton: UIButton!
-    @IBOutlet private weak var libraryButton: UIButton!
+    @IBOutlet private weak var playlistButton: UIButton!
     @IBOutlet private weak var underFavoritesButtonView: UIView!
     @IBOutlet private weak var underLibraryButtonView: UIView!
     @IBOutlet private weak var libraryCollectionView: UICollectionView!
     
-    private var underLineViewStatus = true
-    private var listFavoritesTrack = [Track]()
+    private var isFavoritesButton = true
+    private var listLikedTrack = [Track]()
+    private var listTrack = [Track]()
+    private var listPlaylist = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        getDataFromAPI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listLikedTrack = loadLikedStatusData(tracks: listTrack)
+        DispatchQueue.main.async {
+            self.libraryCollectionView.reloadData()
+        }
     }
     
     private func configure() {
         title = "My Library"
         navigationItem.largeTitleDisplayMode = .always
-        configureUnderButtonView(status: underLineViewStatus)
+        configureUnderButtonView(status: isFavoritesButton)
         configureLibraryCollectionView()
+        favoritesButton.addTarget(self, action: #selector(didTapFavoritesButton), for: .touchUpInside)
+        playlistButton.addTarget(self, action: #selector(didTapPlaylistButton), for: .touchUpInside)
     }
     
     private func configureUnderButtonView(status: Bool) {
@@ -45,16 +58,66 @@ final class LibraryViewController: UIViewController {
         }
     }
     
+    @objc private func didTapFavoritesButton() {
+        isFavoritesButton = true
+        configureUnderButtonView(status: isFavoritesButton)
+        DispatchQueue.main.async {
+            self.libraryCollectionView.reloadData()
+        }
+    }
+    
+    @objc private func didTapPlaylistButton() {
+        isFavoritesButton = false
+        configureUnderButtonView(status: isFavoritesButton)
+        DispatchQueue.main.async {
+            self.libraryCollectionView.reloadData()
+        }
+    }
+    
+    private func getDataFromAPI() {
+        APIServices.shared.fetchTracksJSON { [unowned self] result in
+            switch result {
+            case .success(let tracks):
+                self.loadData(tracks: tracks)
+            case .failure(let error):
+                print("Failed to fetch Tracks: \(error)")
+            }
+        }
+    }
+    
+    private func loadData(tracks: [Track]) {
+        listTrack = tracks
+        listLikedTrack = loadLikedStatusData(tracks: listTrack)
+        DispatchQueue.main.async {
+            self.libraryCollectionView.reloadData()
+        }
+    }
+    
+    private func loadLikedStatusData(tracks: [Track]) -> [Track] {
+        guard let listLikedTrackId = TrackDatabase.shared.queryAll() else {
+            return []
+        }
+        let listTrack = tracks.map { track in
+            return track.with { $0.isLiked = listLikedTrackId.contains($0.trackID ?? 0) }
+        }.filter { $0.isLiked }
+        return listTrack
+    }
 }
 
 extension LibraryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listFavoritesTrack.count
+        if isFavoritesButton {
+            return listLikedTrack.count
+        } else {
+            return listPlaylist.count + 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if underLineViewStatus {
+        if isFavoritesButton {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TrackCollectionViewCell.self)
+            cell.configure(track: listLikedTrack[indexPath.row])
+            cell.delegate = self
             return cell
         } else {
             if indexPath.row == 0 {
@@ -70,7 +133,19 @@ extension LibraryViewController: UICollectionViewDataSource {
 
 extension LibraryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //Push View Controller
+        if isFavoritesButton {
+            let viewController = PlayerViewController()
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            
+            if indexPath.row == 0 {
+                let viewController = AddNewPlaylistViewController()
+                navigationController?.pushViewController(viewController, animated: true)
+            } else {
+                let viewController = PlaylistViewController()
+                navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
     }
 }
 
@@ -91,5 +166,14 @@ extension LibraryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 10, bottom: 0, right: 10)
+    }
+}
+
+extension LibraryViewController: TrackCollectionViewCellDelegate {
+    func reloadCollectionView() {
+        listLikedTrack = loadLikedStatusData(tracks: listTrack)
+        DispatchQueue.main.async {
+            self.libraryCollectionView.reloadData()
+        }
     }
 }

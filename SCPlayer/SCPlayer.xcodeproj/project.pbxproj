@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC237A9326555BC00053BBF9 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC237A9126555BC00053BBF9 /* PlaylistViewController.swift */; };
+		EC237A9426555BC00053BBF9 /* PlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC237A9226555BC00053BBF9 /* PlaylistViewController.xib */; };
+		EC237A9826555F680053BBF9 /* AddNewPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC237A9626555F680053BBF9 /* AddNewPlaylistViewController.swift */; };
+		EC237A9926555F680053BBF9 /* AddNewPlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC237A9726555F680053BBF9 /* AddNewPlaylistViewController.xib */; };
 		EC3FC3DC264BBF6500820D84 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */; };
 		EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */; };
 		EC47C1422653678F005C52B9 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47C1412653678F005C52B9 /* Database.swift */; };
@@ -52,6 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC237A9126555BC00053BBF9 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		EC237A9226555BC00053BBF9 /* PlaylistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistViewController.xib; sourceTree = "<group>"; };
+		EC237A9626555F680053BBF9 /* AddNewPlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlaylistViewController.swift; sourceTree = "<group>"; };
+		EC237A9726555F680053BBF9 /* AddNewPlaylistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewPlaylistViewController.xib; sourceTree = "<group>"; };
 		EC3FC3DA264BBF6500820D84 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		EC47C1412653678F005C52B9 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -109,9 +117,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC237A9026555B920053BBF9 /* Playlist Screen */ = {
+			isa = PBXGroup;
+			children = (
+				EC237A9126555BC00053BBF9 /* PlaylistViewController.swift */,
+				EC237A9226555BC00053BBF9 /* PlaylistViewController.xib */,
+			);
+			path = "Playlist Screen";
+			sourceTree = "<group>";
+		};
+		EC237A9526555F440053BBF9 /* Add New Playlist Screen */ = {
+			isa = PBXGroup;
+			children = (
+				EC237A9626555F680053BBF9 /* AddNewPlaylistViewController.swift */,
+				EC237A9726555F680053BBF9 /* AddNewPlaylistViewController.xib */,
+			);
+			path = "Add New Playlist Screen";
+			sourceTree = "<group>";
+		};
+		EC237A9A265560460053BBF9 /* Home Genre Label Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC6B4394264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift */,
+				EC6B4395264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib */,
+			);
+			path = "Home Genre Label Cell";
+			sourceTree = "<group>";
+		};
 		EC3FC3D8264BBF3000820D84 /* Orthers */ = {
 			isa = PBXGroup;
 			children = (
+				EC237A9526555F440053BBF9 /* Add New Playlist Screen */,
+				EC237A9026555B920053BBF9 /* Playlist Screen */,
 				ECA8AC8C2651785D008769F1 /* Search Results Screen */,
 				EC3FC3D9264BBF4300820D84 /* Player Screen */,
 			);
@@ -157,9 +194,8 @@
 		EC6B438B264B6ADA00D0825A /* Home Screen Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EC237A9A265560460053BBF9 /* Home Genre Label Cell */,
 				EC6B439A264B75C100D0825A /* Home List Track */,
-				EC6B4394264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift */,
-				EC6B4395264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib */,
 			);
 			path = "Home Screen Cell";
 			sourceTree = "<group>";
@@ -419,7 +455,9 @@
 				EC6B439E264B75E300D0825A /* HomeTrackCollectionViewCell.xib in Resources */,
 				EC763CD42654FE9F00A148FF /* PlaylistCollectionViewCell.xib in Resources */,
 				EC6B4397264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.xib in Resources */,
+				EC237A9426555BC00053BBF9 /* PlaylistViewController.xib in Resources */,
 				ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */,
+				EC237A9926555F680053BBF9 /* AddNewPlaylistViewController.xib in Resources */,
 				EC79C75626522FB00063EB28 /* SearchResultsViewController.xib in Resources */,
 				ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */,
 			);
@@ -457,7 +495,9 @@
 				EC79C758265260A80063EB28 /* UIImageView+.swift in Sources */,
 				EC47C14826536887005C52B9 /* APIKey.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
+				EC237A9326555BC00053BBF9 /* PlaylistViewController.swift in Sources */,
 				EC763CD82654FFB800A148FF /* TrackCollectionViewCell.swift in Sources */,
+				EC237A9826555F680053BBF9 /* AddNewPlaylistViewController.swift in Sources */,
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
 				EC6B439D264B75E300D0825A /* HomeTrackCollectionViewCell.swift in Sources */,
 				EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */,
