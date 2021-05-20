@@ -39,7 +39,7 @@ class TrackEntity {
         sqlite3_finalize(insertStatement)
     }
     
-    public func getAllTrackInPlaylist(playlistName: String) -> [Int]? {
+    public func getAllTrackIdInPlaylist(playlistName: String) -> [Int]? {
         let playlistNameFormat = "\"\(playlistName)\""
         let queryStatementString = """
         SELECT trackId FROM trackOfPlaylistTable WHERE playlistName = \(playlistNameFormat);

@@ -13,6 +13,7 @@
                 <outlet property="favoritesButton" destination="ueo-ET-ext" id="BbE-g1-FcP"/>
                 <outlet property="libraryCollectionView" destination="MXE-jU-4fe" id="HdZ-yy-ZHi"/>
                 <outlet property="playlistButton" destination="Edn-JF-Ki3" id="ez8-tu-wCU"/>
+                <outlet property="spinner" destination="C7d-vs-rMo" id="Rxf-A1-tXa"/>
                 <outlet property="underFavoritesButtonView" destination="EcF-04-8z8" id="6G1-b3-j2w"/>
                 <outlet property="underLibraryButtonView" destination="FGC-HE-pc5" id="uXJ-uZ-MhI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -71,6 +72,13 @@
                         <constraint firstAttribute="width" constant="150" id="nLO-Wv-xkH"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="C7d-vs-rMo">
+                    <rect key="frame" x="147" y="388" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="ssq-YL-U7z"/>
+                        <constraint firstAttribute="width" constant="120" id="yq9-Fq-zsg"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,10 +87,12 @@
                 <constraint firstItem="EcF-04-8z8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4uH-6M-NiE"/>
                 <constraint firstItem="Edn-JF-Ki3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="5Ag-Ig-ILc"/>
                 <constraint firstItem="ueo-ET-ext" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7j2-Iu-eJJ"/>
+                <constraint firstItem="C7d-vs-rMo" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="BVH-AI-8J4"/>
                 <constraint firstItem="FGC-HE-pc5" firstAttribute="leading" secondItem="EcF-04-8z8" secondAttribute="trailing" id="GKG-kX-auH"/>
                 <constraint firstItem="MXE-jU-4fe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OXP-RN-6Yc"/>
                 <constraint firstItem="MXE-jU-4fe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QvC-bI-9op"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MXE-jU-4fe" secondAttribute="bottom" id="TMs-xD-Su2"/>
+                <constraint firstItem="C7d-vs-rMo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TQ3-je-VDu"/>
                 <constraint firstItem="EcF-04-8z8" firstAttribute="top" secondItem="ueo-ET-ext" secondAttribute="bottom" id="Ysb-xa-B3C"/>
                 <constraint firstItem="ueo-ET-ext" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="gKy-Cv-QzY"/>
                 <constraint firstItem="FGC-HE-pc5" firstAttribute="top" secondItem="Edn-JF-Ki3" secondAttribute="bottom" id="kg4-RT-mcc"/>

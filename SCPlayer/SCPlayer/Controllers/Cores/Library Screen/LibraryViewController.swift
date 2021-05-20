@@ -14,11 +14,12 @@ final class LibraryViewController: UIViewController {
     @IBOutlet private weak var underFavoritesButtonView: UIView!
     @IBOutlet private weak var underLibraryButtonView: UIView!
     @IBOutlet private weak var libraryCollectionView: UICollectionView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     private var isFavoritesButton = true
     private var listLikedTrack = [Track]()
     private var listTrack = [Track]()
-    private var listPlaylist = String()
+    private var listPlaylist = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ final class LibraryViewController: UIViewController {
     }
     
     private func configure() {
+        spinner.startAnimating()
         title = "My Library"
         navigationItem.largeTitleDisplayMode = .always
         configureUnderButtonView(status: isFavoritesButton)
@@ -88,7 +90,10 @@ final class LibraryViewController: UIViewController {
     private func loadData(tracks: [Track]) {
         listTrack = tracks
         listLikedTrack = loadLikedStatusData(tracks: listTrack)
+        loadListPlaylist()
         DispatchQueue.main.async {
+            self.spinner.stopAnimating()
+            self.spinner.isHidden = true
             self.libraryCollectionView.reloadData()
         }
     }
@@ -101,6 +106,20 @@ final class LibraryViewController: UIViewController {
             return track.with { $0.isLiked = listLikedTrackId.contains($0.trackID ?? 0) }
         }.filter { $0.isLiked }
         return listTrack
+    }
+    
+    private func loadListPlaylist() {
+        listPlaylist = PlaylistEntity.shared.getAllPlaylist() ?? []
+    }
+    
+    private func getNumberOfSongInPlaylist(playlistName: String) -> Int {
+        return TrackEntity.shared.getAllTrackIdInPlaylist(playlistName: playlistName)?.count ?? 0
+    }
+    
+    private func getImageOfFirstTrackInPlaylist(playlistName: String) -> String? {
+        let listId = TrackEntity.shared.getAllTrackIdInPlaylist(playlistName: playlistName) ?? []
+        let track = listTrack.first { $0.trackID == listId.first }
+        return track?.user?.avatarUrl
     }
 }
 
@@ -125,6 +144,9 @@ extension LibraryViewController: UICollectionViewDataSource {
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PlaylistCollectionViewCell.self)
+                let numberOfTrack = getNumberOfSongInPlaylist(playlistName: listPlaylist[indexPath.row - 1])
+                let imageUrlString = getImageOfFirstTrackInPlaylist(playlistName: listPlaylist[indexPath.row - 1])
+                cell.configure(playlistName: listPlaylist[indexPath.row - 1], numberOfTrack: numberOfTrack, imageUrlString: imageUrlString)
                 return cell
             }
         }
