@@ -80,7 +80,7 @@ final class SearchResultsViewController: UIViewController {
     }
     
     private func loadLikedStatusData(tracks: [Track]) -> [Track] {
-        guard let listLikedTrackId = TrackDatabase.shared.queryAll() else {
+        guard let listLikedTrackId = LikedTrackEntity.shared.getAllIdLikedTrack() else {
             return []
         }
         let listTrack = tracks.map { track in
