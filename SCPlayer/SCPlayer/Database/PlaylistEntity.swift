@@ -88,6 +88,7 @@ class PlaylistEntity {
         } else {
             print("\nDelete statement could not be prepared")
         }
+        TrackEntity.shared.deleteTrackByPlaylistName(playlistName: playlistName)
         sqlite3_finalize(deleteStatement)
     }
 }

@@ -98,4 +98,20 @@ class TrackEntity {
         }
         sqlite3_finalize(deleteStatement)
     }
+    
+    public func deleteTrackByPlaylistName(playlistName: String) {
+        let playlistNameFormat = "\"\(playlistName)\""
+        let deleteStatementString = "DELETE FROM trackOfPlaylistTable WHERE playlistName = \(playlistNameFormat);"
+        var deleteStatement: OpaquePointer?
+        if sqlite3_prepare_v2(database, deleteStatementString, -1, &deleteStatement, nil) == SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("\nSuccessfully deleted Track.")
+            } else {
+                print("\nCould not delete Track.")
+            }
+        } else {
+            print("\nDelete statement could not be prepared")
+        }
+        sqlite3_finalize(deleteStatement)
+    }
 }

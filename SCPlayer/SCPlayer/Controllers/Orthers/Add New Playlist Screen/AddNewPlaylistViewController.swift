@@ -13,6 +13,8 @@ final class AddNewPlaylistViewController: UIViewController {
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var createButton: UIButton!
     
+    private var selfPlaylistName = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -20,15 +22,22 @@ final class AddNewPlaylistViewController: UIViewController {
     
     private func configure() {
         inputTextField.textAlignment = .center
+        inputTextField.text = selfPlaylistName
+    }
+    
+    @IBAction func didTapCreateButton(_ sender: UIButton) {
+        let text = inputTextField.text ?? ""
+        if !(text.isEmpty) {
+            PlaylistEntity.shared.insertNewPlaylist(playlistName: text)
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func didTapCancelButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func didTapCreateButton(_ sender: Any) {
-        if let text = inputTextField.text {
-            PlaylistEntity.shared.insertNewPlaylist(playlistName: text)
-        }
-        navigationController?.popViewController(animated: true)
+    
+    public func getData(playlistName: String) {
+        selfPlaylistName = playlistName
     }
 }

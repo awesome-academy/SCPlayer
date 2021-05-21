@@ -67,7 +67,25 @@ extension TrackAndPlaylistSettingViewController: UICollectionViewDataSource {
 
 extension TrackAndPlaylistSettingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if isPlaylist {
+            switch indexPath.row {
+            case 1:
+                let viewController = AddSongViewController()
+                viewController.getData(playlistName: selfPlaylistName)
+                navigationController?.pushViewController(viewController, animated: true)
+            case 2:
+                let viewController = AddNewPlaylistViewController()
+                viewController.getData(playlistName: selfPlaylistName)
+                navigationController?.pushViewController(viewController, animated: true)
+            case 3:
+                PlaylistEntity.shared.deletePlaylist(playlistName: selfPlaylistName)
+                navigationController?.popViewController(animated: true)
+            default:
+                print("")
+            }
+        } else {
+            // Track Detail Function
+        }
     }
 }
 
