@@ -30,6 +30,7 @@ final class LibraryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         listLikedTrack = loadLikedStatusData(tracks: listTrack)
+        loadListPlaylist()
         DispatchQueue.main.async {
             self.libraryCollectionView.reloadData()
         }
@@ -147,6 +148,7 @@ extension LibraryViewController: UICollectionViewDataSource {
                 let numberOfTrack = getNumberOfSongInPlaylist(playlistName: listPlaylist[indexPath.row - 1])
                 let imageUrlString = getImageOfFirstTrackInPlaylist(playlistName: listPlaylist[indexPath.row - 1])
                 cell.configure(playlistName: listPlaylist[indexPath.row - 1], numberOfTrack: numberOfTrack, imageUrlString: imageUrlString)
+                cell.delegate = self
                 return cell
             }
         }
@@ -197,5 +199,13 @@ extension LibraryViewController: TrackCollectionViewCellDelegate {
         DispatchQueue.main.async {
             self.libraryCollectionView.reloadData()
         }
+    }
+}
+
+extension LibraryViewController: PlaylistCollectionViewCellDelegate {
+    func pushViewController(playlistName: String, playlistImageString: String?) {
+        let viewController = TrackAndPlaylistSettingViewController()
+        viewController.getDataPlaylist(playlistName: playlistName, imageUrlString: playlistImageString)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

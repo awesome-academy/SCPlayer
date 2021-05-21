@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DetailCollectionViewCell" customModule="SCPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="446"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="438" height="446"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playlist" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-UY-A17">
+                        <rect key="frame" x="94" y="42.5" width="250" height="250"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="250" id="HAy-7p-wsT"/>
+                            <constraint firstAttribute="width" constant="250" id="IgG-ux-Is6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See you Again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Liw-Ve-gFI">
+                        <rect key="frame" x="50" y="297.5" width="338" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="XrJ-UY-HQ8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Liw-Ve-gFI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="50" id="P25-T6-ewI"/>
+                <constraint firstItem="BVy-UY-A17" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.75" id="ce7-C4-FeG"/>
+                <constraint firstItem="Liw-Ve-gFI" firstAttribute="top" secondItem="BVy-UY-A17" secondAttribute="bottom" constant="5" id="rW1-Qi-bz9"/>
+                <constraint firstItem="BVy-UY-A17" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vEv-t3-XVW"/>
+                <constraint firstAttribute="trailing" secondItem="Liw-Ve-gFI" secondAttribute="trailing" constant="50" id="yT5-0i-qZe"/>
+            </constraints>
+            <size key="customSize" width="438" height="446"/>
+            <connections>
+                <outlet property="centerLabel" destination="Liw-Ve-gFI" id="wcH-31-iFI"/>
+                <outlet property="imageView" destination="BVy-UY-A17" id="XFs-VI-fsm"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="127.23214285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="playlist" width="100" height="100"/>
+    </resources>
+</document>
