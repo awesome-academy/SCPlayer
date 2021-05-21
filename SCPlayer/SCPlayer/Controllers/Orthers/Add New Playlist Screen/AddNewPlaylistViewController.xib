@@ -46,7 +46,7 @@
                         <color key="titleColor" systemColor="labelColor"/>
                     </state>
                     <connections>
-                        <action selector="didTapCancelButton:" destination="-1" eventType="touchUpInside" id="rxe-7z-4ZR"/>
+                        <action selector="didTapCancelButton:" destination="-1" eventType="touchUpInside" id="Z2e-Al-oP8"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvS-Ey-8FS">
@@ -60,7 +60,7 @@
                         <color key="titleColor" systemColor="systemGreenColor"/>
                     </state>
                     <connections>
-                        <action selector="didTapCreateButton:" destination="-1" eventType="touchUpInside" id="99q-7k-nwP"/>
+                        <action selector="didTapCreateButton:" destination="-1" eventType="touchUpInside" id="JZI-Jm-e2N"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUE-Qx-wxP">

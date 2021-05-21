@@ -10,9 +10,9 @@ import Reusable
 
 final class HomeTrackCollectionViewCell: UICollectionViewCell, NibReusable {
 
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var songNameLabel: UILabel!
-    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet private weak var mainImageView: UIImageView!
+    @IBOutlet private weak var songNameLabel: UILabel!
+    @IBOutlet private weak var artistLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
