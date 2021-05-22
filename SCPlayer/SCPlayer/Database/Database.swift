@@ -20,14 +20,14 @@ class Database {
         """
     private let createPlaylistTableQueryString =
         """
-        CREATE TABLE IF NOT EXISTS playlistTable ( playlistName CHAR(255) PRIMARY KEY NOT NULL );
+        CREATE TABLE IF NOT EXISTS playlistTable ( playlistName CHAR(500) PRIMARY KEY NOT NULL );
         """
     private let createTrackTableQueryString =
         """
         CREATE TABLE IF NOT EXISTS trackOfPlaylistTable (
-        idRow CHAR(255) PRIMARY KEY NOT NULL,
+        idRow CHAR(500) PRIMARY KEY NOT NULL,
         trackId INT NOT NULl,
-        playlistName CHAR(255) NOT NULL,
+        playlistName CHAR(500) NOT NULL,
         FOREIGN KEY (playlistName) REFERENCES playlistTable (playlistName) ON DELETE CASCADE);
         """
     
