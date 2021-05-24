@@ -161,7 +161,6 @@ extension LibraryViewController: UICollectionViewDelegateFlowLayout {
             let viewController = PlayerViewController()
             navigationController?.pushViewController(viewController, animated: true)
         } else {
-            
             if indexPath.row == 0 {
                 let viewController = AddNewPlaylistViewController()
                 navigationController?.pushViewController(viewController, animated: true)

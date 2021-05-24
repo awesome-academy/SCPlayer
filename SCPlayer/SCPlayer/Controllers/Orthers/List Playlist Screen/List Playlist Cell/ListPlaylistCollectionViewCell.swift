@@ -25,4 +25,10 @@ final class ListPlaylistCollectionViewCell: UICollectionViewCell, NibReusable {
         playlistLabel.textColor = .black
         countLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
+    
+    public func configure(playlistName: String, numberOfTrack: Int, imageUrlString: String?) {
+        imageView.loadImage(urlString: imageUrlString)
+        playlistLabel.text = playlistName
+        countLabel.text = "\(numberOfTrack) \(numberOfTrack <= 1 ? "Song" : "Songs")"
+    }
 }

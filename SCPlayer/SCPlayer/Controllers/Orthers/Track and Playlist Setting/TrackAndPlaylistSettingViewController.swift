@@ -122,6 +122,7 @@ extension TrackAndPlaylistSettingViewController: UICollectionViewDelegateFlowLay
                 }
             case 2:
                 let viewController = ListPlaylistViewController()
+                viewController.getData(trackId: selfTrackId, listTrack: selfListTrack)
                 navigationController?.pushViewController(viewController, animated: true)
             case 3:
                 guard let url = URL(string: permalinkUrl) else { return }
