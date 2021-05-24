@@ -114,7 +114,7 @@ extension PlaylistViewController: UICollectionViewDelegateFlowLayout {
 extension PlaylistViewController: PlaylistTrackCellCollectionViewCellDelegate {
     func pushMusicSettingViewController(trackId: Int) {
         let viewController = TrackAndPlaylistSettingViewController()
-        viewController.getDataTrack(trackId: trackId, listTrack: listTrackResult)
+        viewController.getDataTrack(trackId: trackId, listTrack: selfListTrack)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

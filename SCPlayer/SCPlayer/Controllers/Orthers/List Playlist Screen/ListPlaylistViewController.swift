@@ -11,11 +11,19 @@ final class ListPlaylistViewController: UIViewController {
 
     @IBOutlet private weak var listPlaylistCollectionView: UICollectionView!
     
-    private var listPlaylist = String()
+    private var selfListTrack = [Track]()
+    private var listPlaylist = [String]()
+    private var selfTrackId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        getListPlaylist()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getListPlaylist()
     }
     
     private func configure() {
@@ -30,11 +38,33 @@ final class ListPlaylistViewController: UIViewController {
             $0.register(cellType: ListPlaylistCollectionViewCell.self)
         }
     }
+    
+    public func getData(trackId: Int, listTrack: [Track]) {
+        selfListTrack = listTrack
+        selfTrackId = trackId
+    }
+    
+    private func getListPlaylist() {
+        listPlaylist = PlaylistEntity.shared.getAllPlaylist() ?? []
+        DispatchQueue.main.async {
+            self.listPlaylistCollectionView.reloadData()
+        }
+    }
+    
+    private func getNumberOfSongInPlaylist(playlistName: String) -> Int {
+        return TrackEntity.shared.getAllTrackIdInPlaylist(playlistName: playlistName)?.count ?? 0
+    }
+    
+    private func getImageOfFirstTrackInPlaylist(playlistName: String) -> String? {
+        let listId = TrackEntity.shared.getAllTrackIdInPlaylist(playlistName: playlistName) ?? []
+        let track = selfListTrack.first { $0.trackID == listId.first }
+        return track?.user?.avatarUrl
+    }
 }
 
 extension ListPlaylistViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return listPlaylist.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -43,12 +73,28 @@ extension ListPlaylistViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ListPlaylistCollectionViewCell.self)
+            let numberOfTrack = getNumberOfSongInPlaylist(playlistName: listPlaylist[indexPath.row - 1])
+            let imageUrlString = getImageOfFirstTrackInPlaylist(playlistName: listPlaylist[indexPath.row - 1])
+            cell.configure(playlistName: listPlaylist[indexPath.row - 1], numberOfTrack: numberOfTrack, imageUrlString: imageUrlString)
             return cell
         }
     }
 }
 
 extension ListPlaylistViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let viewController = AddNewPlaylistViewController()
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            let idRow = "\(selfTrackId).\(listPlaylist[indexPath.row - 1])"
+            TrackEntity.shared.insertNewTrack(idRow: idRow,
+                                              trackId: selfTrackId,
+                                              playlistName: listPlaylist[indexPath.row - 1])
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
