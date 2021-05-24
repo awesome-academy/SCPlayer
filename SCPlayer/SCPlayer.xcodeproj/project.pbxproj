@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC128A69265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC128A67265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.swift */; };
+		EC128A6A265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC128A68265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.xib */; };
 		EC237A9326555BC00053BBF9 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC237A9126555BC00053BBF9 /* PlaylistViewController.swift */; };
 		EC237A9426555BC00053BBF9 /* PlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC237A9226555BC00053BBF9 /* PlaylistViewController.xib */; };
 		EC237A9826555F680053BBF9 /* AddNewPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC237A9626555F680053BBF9 /* AddNewPlaylistViewController.swift */; };
@@ -73,6 +75,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC128A67265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC128A68265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPlaylistCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC237A9126555BC00053BBF9 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		EC237A9226555BC00053BBF9 /* PlaylistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistViewController.xib; sourceTree = "<group>"; };
 		EC237A9626555F680053BBF9 /* AddNewPlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlaylistViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC128A66265B7EF100D112F0 /* List Playlist Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC128A67265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.swift */,
+				EC128A68265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.xib */,
+			);
+			path = "List Playlist Cell";
+			sourceTree = "<group>";
+		};
 		EC237A9026555B920053BBF9 /* Playlist Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +423,7 @@
 		EC958C0D2658EB0A0039E67F /* List Playlist Screen */ = {
 			isa = PBXGroup;
 			children = (
+				EC128A66265B7EF100D112F0 /* List Playlist Cell */,
 				EC958C0E2658EB350039E67F /* ListPlaylistViewController.swift */,
 				EC958C0F2658EB350039E67F /* ListPlaylistViewController.xib */,
 			);
@@ -560,6 +574,7 @@
 			files = (
 				ECBC9EAF2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.xib in Resources */,
 				EC763CD92654FFB800A148FF /* TrackCollectionViewCell.xib in Resources */,
+				EC128A6A265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.xib in Resources */,
 				EC7FEF182656AD760047DCE0 /* TrackAndPlaylistSettingViewController.xib in Resources */,
 				EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */,
 				EC958C112658EB350039E67F /* ListPlaylistViewController.xib in Resources */,
@@ -639,6 +654,7 @@
 				EC47C1422653678F005C52B9 /* Database.swift in Sources */,
 				EC958C102658EB350039E67F /* ListPlaylistViewController.swift in Sources */,
 				EC763CD32654FE9F00A148FF /* PlaylistCollectionViewCell.swift in Sources */,
+				EC128A69265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.swift in Sources */,
 				EC6B4392264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift in Sources */,
 				EC6B4399264B70F000D0825A /* UIView+.swift in Sources */,
 				EC6B4396264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift in Sources */,
