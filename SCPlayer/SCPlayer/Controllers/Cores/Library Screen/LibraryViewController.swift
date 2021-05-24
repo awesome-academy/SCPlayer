@@ -155,7 +155,7 @@ extension LibraryViewController: UICollectionViewDataSource {
     }
 }
 
-extension LibraryViewController: UICollectionViewDelegate {
+extension LibraryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if isFavoritesButton {
             let viewController = PlayerViewController()
@@ -167,13 +167,12 @@ extension LibraryViewController: UICollectionViewDelegate {
                 navigationController?.pushViewController(viewController, animated: true)
             } else {
                 let viewController = PlaylistViewController()
+                viewController.getData(playlistName: listPlaylist[indexPath.row - 1], listTrack: listTrack)
                 navigationController?.pushViewController(viewController, animated: true)
             }
         }
     }
-}
-
-extension LibraryViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
@@ -205,7 +204,7 @@ extension LibraryViewController: TrackCollectionViewCellDelegate {
 extension LibraryViewController: PlaylistCollectionViewCellDelegate {
     func pushViewController(playlistName: String, playlistImageString: String?) {
         let viewController = TrackAndPlaylistSettingViewController()
-        viewController.getDataPlaylist(playlistName: playlistName, imageUrlString: playlistImageString)
+        viewController.getDataPlaylist(playlistName: playlistName, imageUrlString: playlistImageString, listTrack: listTrack)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

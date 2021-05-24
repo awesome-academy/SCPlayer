@@ -57,8 +57,12 @@
 		EC7FEF292656C6CA0047DCE0 /* AddSongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7FEF272656C6CA0047DCE0 /* AddSongViewController.xib */; };
 		EC7FEF2D2656D54B0047DCE0 /* AddSongCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FEF2B2656D54B0047DCE0 /* AddSongCellCollectionViewCell.swift */; };
 		EC7FEF2E2656D54B0047DCE0 /* AddSongCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7FEF2C2656D54B0047DCE0 /* AddSongCellCollectionViewCell.xib */; };
+		EC958C102658EB350039E67F /* ListPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC958C0E2658EB350039E67F /* ListPlaylistViewController.swift */; };
+		EC958C112658EB350039E67F /* ListPlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC958C0F2658EB350039E67F /* ListPlaylistViewController.xib */; };
 		ECA8AC8A265156AD008769F1 /* SearchByGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */; };
 		ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */; };
+		ECBC9EAE2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9EAC2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.swift */; };
+		ECBC9EAF2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBC9EAD2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.xib */; };
 		ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95692648E7EE00970744 /* HomeViewController.swift */; };
 		ECDA956C2648E7EE00970744 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDA956A2648E7EE00970744 /* HomeViewController.xib */; };
 		ECDA95702648E80D00970744 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA956E2648E80D00970744 /* SearchViewController.swift */; };
@@ -119,8 +123,12 @@
 		EC7FEF272656C6CA0047DCE0 /* AddSongViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSongViewController.xib; sourceTree = "<group>"; };
 		EC7FEF2B2656D54B0047DCE0 /* AddSongCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSongCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC7FEF2C2656D54B0047DCE0 /* AddSongCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSongCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC958C0E2658EB350039E67F /* ListPlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlaylistViewController.swift; sourceTree = "<group>"; };
+		EC958C0F2658EB350039E67F /* ListPlaylistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPlaylistViewController.xib; sourceTree = "<group>"; };
 		ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByGenreCollectionViewCell.xib; sourceTree = "<group>"; };
+		ECBC9EAC2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTrackCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECBC9EAD2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistTrackCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECDA95692648E7EE00970744 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECDA956A2648E7EE00970744 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		ECDA956E2648E80D00970744 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		EC237A9026555B920053BBF9 /* Playlist Screen */ = {
 			isa = PBXGroup;
 			children = (
+				ECBC9EAB2657A96A000EC31D /* Play List Track Cell */,
 				EC237A9126555BC00053BBF9 /* PlaylistViewController.swift */,
 				EC237A9226555BC00053BBF9 /* PlaylistViewController.xib */,
 			);
@@ -173,6 +182,7 @@
 		EC3FC3D8264BBF3000820D84 /* Orthers */ = {
 			isa = PBXGroup;
 			children = (
+				EC958C0D2658EB0A0039E67F /* List Playlist Screen */,
 				EC7FEF252656C6AA0047DCE0 /* Add New Song For Playlist Screen */,
 				EC7FEF132656AD300047DCE0 /* Track and Playlist Setting */,
 				EC237A9526555F440053BBF9 /* Add New Playlist Screen */,
@@ -397,6 +407,15 @@
 			path = "Add Song Cell";
 			sourceTree = "<group>";
 		};
+		EC958C0D2658EB0A0039E67F /* List Playlist Screen */ = {
+			isa = PBXGroup;
+			children = (
+				EC958C0E2658EB350039E67F /* ListPlaylistViewController.swift */,
+				EC958C0F2658EB350039E67F /* ListPlaylistViewController.xib */,
+			);
+			path = "List Playlist Screen";
+			sourceTree = "<group>";
+		};
 		ECA8AC8626515643008769F1 /* Search Screen Celll */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +441,15 @@
 				EC79C75426522FB00063EB28 /* SearchResultsViewController.xib */,
 			);
 			path = "Search Results Screen";
+			sourceTree = "<group>";
+		};
+		ECBC9EAB2657A96A000EC31D /* Play List Track Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ECBC9EAC2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.swift */,
+				ECBC9EAD2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.xib */,
+			);
+			path = "Play List Track Cell";
 			sourceTree = "<group>";
 		};
 		ECDA95682648E7D600970744 /* Home Screen */ = {
@@ -530,9 +558,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECBC9EAF2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.xib in Resources */,
 				EC763CD92654FFB800A148FF /* TrackCollectionViewCell.xib in Resources */,
 				EC7FEF182656AD760047DCE0 /* TrackAndPlaylistSettingViewController.xib in Resources */,
 				EC72AA212648DD8E00E2F4EC /* LaunchScreen.storyboard in Resources */,
+				EC958C112658EB350039E67F /* ListPlaylistViewController.xib in Resources */,
 				ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */,
 				EC763CDD265507DB00A148FF /* AddPlaylistCollectionViewCell.xib in Resources */,
 				EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */,
@@ -607,12 +637,14 @@
 				ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */,
 				EC7FEF172656AD760047DCE0 /* TrackAndPlaylistSettingViewController.swift in Sources */,
 				EC47C1422653678F005C52B9 /* Database.swift in Sources */,
+				EC958C102658EB350039E67F /* ListPlaylistViewController.swift in Sources */,
 				EC763CD32654FE9F00A148FF /* PlaylistCollectionViewCell.swift in Sources */,
 				EC6B4392264B6BBA00D0825A /* HomeListTrackCollectionViewCell.swift in Sources */,
 				EC6B4399264B70F000D0825A /* UIView+.swift in Sources */,
 				EC6B4396264B6CAA00D0825A /* HomeGenreLabelCollectionViewCell.swift in Sources */,
 				EC7FEF1C2656B0580047DCE0 /* OptionCollectionViewCell.swift in Sources */,
 				EC79C75126522CF80063EB28 /* SearchResultsCellCollectionViewCell.swift in Sources */,
+				ECBC9EAE2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.swift in Sources */,
 				EC763CDC265507DB00A148FF /* AddPlaylistCollectionViewCell.swift in Sources */,
 				EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */,
 				EC6519E7264A3048007BA2FD /* UserModel.swift in Sources */,

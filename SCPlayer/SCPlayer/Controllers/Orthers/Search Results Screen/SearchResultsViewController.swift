@@ -109,14 +109,12 @@ extension SearchResultsViewController: UICollectionViewDataSource {
     }
 }
 
-extension SearchResultsViewController: UICollectionViewDelegate {
+extension SearchResultsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = PlayerViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
-}
-
-extension SearchResultsViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

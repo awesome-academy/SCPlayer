@@ -100,16 +100,14 @@ extension SearchViewController: UICollectionViewDataSource {
     }
 }
 
-extension SearchViewController: UICollectionViewDelegate {
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = SearchResultsViewController()
         viewController.title = listGenre[indexPath.row]
         viewController.getData(genre: listGenre[indexPath.row], allTrack: listTrack)
         navigationController?.pushViewController(viewController, animated: true)
     }
-}
-
-extension SearchViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }

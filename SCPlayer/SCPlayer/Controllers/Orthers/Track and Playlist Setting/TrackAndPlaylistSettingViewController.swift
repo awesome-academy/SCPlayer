@@ -11,11 +11,15 @@ final class TrackAndPlaylistSettingViewController: UIViewController {
     
     @IBOutlet private weak var optionCollectionView: UICollectionView!
     
-    private var selfPlaylistName = String()
+    private var selfListTrack = [Track]()
+    private var selfTrackId = 0
+    private var permalinkUrl = ""
+    private var centerText = ""
     private var selfImageUrlString: String?
+    private var isLiked = false
     private var listOption = [String]()
     private var isPlaylist = true
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -35,15 +39,35 @@ final class TrackAndPlaylistSettingViewController: UIViewController {
         }
     }
     
-    public func getDataPlaylist(playlistName: String, imageUrlString: String?) {
-        selfPlaylistName = playlistName
+    public func getDataPlaylist(playlistName: String, imageUrlString: String?, listTrack: [Track]) {
+        centerText = playlistName
         selfImageUrlString = imageUrlString
+        selfListTrack = listTrack
         isPlaylist = true
         listOption = ["Add songs", "Edit playlist", "Delete playlist", "Share"]
     }
     
-    public func getDataTrack(track: Track) {
-        listOption = ["Like", "Add to Playlist", "View Artist", "Share"]
+    public func getDataTrack(trackId: Int, listTrack: [Track]) {
+        let track = listTrack.first { $0.trackID == trackId }
+        selfListTrack = listTrack
+        selfTrackId = trackId
+        selfImageUrlString = track?.user?.avatarUrl
+        centerText = track?.title ?? ""
+        permalinkUrl = track?.user?.permalinkUrl ?? ""
+        listOption = ["Unlike", "Add to Playlist", "View Artist", "Share"]
+        loadLikeStatus(trackId: trackId)
+        isPlaylist = false
+    }
+    
+    private func loadLikeStatus(trackId: Int) {
+        let track = selfListTrack.first { $0.trackID == trackId }
+        guard let track = track,
+              let listIdLikedTrack = LikedTrackEntity.shared.getAllIdLikedTrack(),
+              !listOption.isEmpty else {
+            return
+        }
+        isLiked = listIdLikedTrack.contains(track.trackID ?? 0) ? true : false
+        listOption[0] = isLiked ? "Like" : "Unlike"
     }
 }
 
@@ -55,7 +79,7 @@ extension TrackAndPlaylistSettingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: DetailCollectionViewCell.self)
-            cell.configure(imageUrlString: selfImageUrlString, label: selfPlaylistName)
+            cell.configure(imageUrlString: selfImageUrlString, label: centerText)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: OptionCollectionViewCell.self)
@@ -65,31 +89,49 @@ extension TrackAndPlaylistSettingViewController: UICollectionViewDataSource {
     }
 }
 
-extension TrackAndPlaylistSettingViewController: UICollectionViewDelegate {
+extension TrackAndPlaylistSettingViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if isPlaylist {
             switch indexPath.row {
             case 1:
                 let viewController = AddSongViewController()
-                viewController.getData(playlistName: selfPlaylistName)
+                viewController.getData(playlistName: centerText, listTrack: selfListTrack)
                 navigationController?.pushViewController(viewController, animated: true)
             case 2:
                 let viewController = AddNewPlaylistViewController()
-                viewController.getData(playlistName: selfPlaylistName)
+                viewController.getData(playlistName: centerText)
                 navigationController?.pushViewController(viewController, animated: true)
             case 3:
-                PlaylistEntity.shared.deletePlaylist(playlistName: selfPlaylistName)
+                PlaylistEntity.shared.deletePlaylist(playlistName: centerText)
                 navigationController?.popViewController(animated: true)
             default:
-                print("")
+                print("Option Out of range")
             }
         } else {
-            // Track Detail Function
+            switch indexPath.row {
+            case 1:
+                if isLiked {
+                    LikedTrackEntity.shared.deleteLikedTrack(trackId: selfTrackId)
+                } else {
+                    LikedTrackEntity.shared.insertNewLikedTrack(trackId: selfTrackId)
+                }
+                loadLikeStatus(trackId: selfTrackId)
+                DispatchQueue.main.async {
+                    self.optionCollectionView.reloadData()
+                }
+            case 2:
+                let viewController = ListPlaylistViewController()
+                navigationController?.pushViewController(viewController, animated: true)
+            case 3:
+                guard let url = URL(string: permalinkUrl) else { return }
+                UIApplication.shared.open(url)
+            default:
+                print("Option Out of range")
+            }
         }
     }
-}
-
-extension TrackAndPlaylistSettingViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
