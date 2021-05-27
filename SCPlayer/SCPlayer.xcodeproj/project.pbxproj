@@ -17,6 +17,7 @@
 		EC3FC3DD264BBF6500820D84 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */; };
 		EC47C1422653678F005C52B9 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47C1412653678F005C52B9 /* Database.swift */; };
 		EC47C14826536887005C52B9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47C14726536887005C52B9 /* APIKey.swift */; };
+		EC49C802265E2FE700BE617B /* PlayMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC49C801265E2FE700BE617B /* PlayMusic.swift */; };
 		EC6519E2264A303F007BA2FD /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E0264A303F007BA2FD /* URLString.swift */; };
 		EC6519E3264A303F007BA2FD /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E1264A303F007BA2FD /* APIServices.swift */; };
 		EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6519E4264A3048007BA2FD /* TrackModel.swift */; };
@@ -72,6 +73,7 @@
 		ECDA95752648E82500970744 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95732648E82500970744 /* LibraryViewController.swift */; };
 		ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDA95742648E82500970744 /* LibraryViewController.xib */; };
 		ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95782648F0D100970744 /* TabBarItems.swift */; };
+		ECE6333126600C5C009C6F08 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6333026600C5C009C6F08 /* PlayerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,7 @@
 		EC3FC3DB264BBF6500820D84 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		EC47C1412653678F005C52B9 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		EC47C14726536887005C52B9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EC49C801265E2FE700BE617B /* PlayMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMusic.swift; sourceTree = "<group>"; };
 		EC6519E0264A303F007BA2FD /* URLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
 		EC6519E1264A303F007BA2FD /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		EC6519E4264A3048007BA2FD /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		ECDA95732648E82500970744 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		ECDA95742648E82500970744 /* LibraryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryViewController.xib; sourceTree = "<group>"; };
 		ECDA95782648F0D100970744 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
+		ECE6333026600C5C009C6F08 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +236,7 @@
 				EC6519E1264A303F007BA2FD /* APIServices.swift */,
 				EC6519E0264A303F007BA2FD /* URLString.swift */,
 				EC47C14726536887005C52B9 /* APIKey.swift */,
+				EC49C801265E2FE700BE617B /* PlayMusic.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			children = (
 				EC6519E4264A3048007BA2FD /* TrackModel.swift */,
 				EC6519E5264A3048007BA2FD /* UserModel.swift */,
+				ECE6333026600C5C009C6F08 /* PlayerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 				EC73FC6C265600B700F82771 /* TrackEntity.swift in Sources */,
 				EC7FEF2D2656D54B0047DCE0 /* AddSongCellCollectionViewCell.swift in Sources */,
 				EC47C14826536887005C52B9 /* APIKey.swift in Sources */,
+				EC49C802265E2FE700BE617B /* PlayMusic.swift in Sources */,
 				ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */,
 				EC237A9326555BC00053BBF9 /* PlaylistViewController.swift in Sources */,
 				EC763CD82654FFB800A148FF /* TrackCollectionViewCell.swift in Sources */,
@@ -643,6 +650,7 @@
 				EC72AA152648DD8B00E2F4EC /* AppDelegate.swift in Sources */,
 				EC7FEF232656B3B10047DCE0 /* DetailCollectionViewCell.swift in Sources */,
 				EC6B439D264B75E300D0825A /* HomeTrackCollectionViewCell.swift in Sources */,
+				ECE6333126600C5C009C6F08 /* PlayerModel.swift in Sources */,
 				EC6519E6264A3048007BA2FD /* TrackModel.swift in Sources */,
 				EC72AA302648DF2600E2F4EC /* TabBarViewController.swift in Sources */,
 				EC6519E2264A303F007BA2FD /* URLString.swift in Sources */,
@@ -734,7 +742,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -789,7 +797,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -88,7 +88,7 @@ extension PlaylistViewController: UICollectionViewDataSource {
 extension PlaylistViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = PlayerViewController()
-        viewController.loadData(track: listTrackResult[indexPath.row])
+        viewController.getData(track: listTrackResult[indexPath.row], listTrack: selfListTrack)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
