@@ -8,11 +8,9 @@
 import Foundation
 
 struct Player {
-    var trackIndex = 0
     var imageUrlString = ""
     var trackId = 0
     var songName = ""
     var artist = ""
-    var streamUrl = ""
     var isLiked = false
 }
