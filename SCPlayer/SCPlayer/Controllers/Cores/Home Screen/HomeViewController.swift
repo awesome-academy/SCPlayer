@@ -114,7 +114,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 extension HomeViewController: HomeListTrackCollectionViewCellDelegate {
     func pushViewController(track: Track) {
         let viewController = PlayerViewController()
-        viewController.loadData(track: track)
+        viewController.getData(track: track, listTrack: listTrack)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

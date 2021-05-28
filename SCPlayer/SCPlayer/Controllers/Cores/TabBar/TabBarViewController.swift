@@ -15,6 +15,7 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func configureTabBar() {
+        view.backgroundColor = .white
         viewControllers = [
             configChildNavigationController(viewController: HomeViewController(), item: TabbarItem.home.item),
             configChildNavigationController(viewController: SearchViewController(), item: TabbarItem.search.item),

@@ -13,8 +13,6 @@ final class SearchViewController: UIViewController {
     @IBOutlet private weak var searchCollectionView: UICollectionView!
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
-    private var searchCellWidthSize = CGFloat()
-    private var searchCellHeightSize = CGFloat()
     private var listGenre = [String]()
     private var listTrack = [Track]()
     
@@ -28,8 +26,6 @@ final class SearchViewController: UIViewController {
         title = "Search"
         navigationItem.largeTitleDisplayMode = .always
         spinner.startAnimating()
-        searchCellWidthSize = view.width/2 - 30
-        searchCellHeightSize = 100
         configureSearchButton()
         configureSearchCollectionView()
     }
@@ -113,10 +109,12 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let searchCellWidthSize: CGFloat = view.width/2 - 30
+        let searchCellHeightSize: CGFloat = 100
         return CGSize(width: searchCellWidthSize, height: searchCellHeightSize)
     }
     
