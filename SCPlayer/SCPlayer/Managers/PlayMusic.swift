@@ -7,10 +7,19 @@
 
 import Foundation
 import AVFoundation
+import MediaPlayer
+
+protocol PlayMusicDelegate: class {
+    func reloadViewController(currentIndex: Int)
+}
 
 class PLayMusic {
     
+    var selfListTrack = [Track]()
+    var currentIndex = 0
     var player: AVPlayer
+    var nowPlayingInfo = [String: Any]()
+    weak var delegate: PlayMusicDelegate?
     
     static let shared = PLayMusic()
     
@@ -18,16 +27,30 @@ class PLayMusic {
         player = AVPlayer.init()
     }
     
-    func initPlay(streamUrl: String) {
+    func preparePlayer(trackId: Int, listTrack: [Track]) {
+        selfListTrack = listTrack
+        currentIndex = selfListTrack.firstIndex { return $0.trackID == trackId } ?? 0
+        let streamUrl = selfListTrack[currentIndex].streamURL ?? ""
+        initPlayer(streamUrl: streamUrl)
+    }
+    
+    func initPlayer(streamUrl: String) {
+        let urlString = "\(streamUrl)?client_id=\(APIKey.key.rawValue)"
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             do {
                 try AVAudioSession.sharedInstance().setActive(true)
-                guard let url = URL(string: streamUrl) else {
+                guard let url = URL(string: urlString) else {
                     return
                 }
                 let playerItem = AVPlayerItem(url: url)
                 player = AVPlayer.init(playerItem: playerItem)
+                let durationSeconds = CMTimeGetSeconds(playerItem.asset.duration)
+                setupMediaPlayer(durationSeconds: Int(durationSeconds))
+                setUpRemoteTransparentControls()
+                NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying),
+                                                       name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                                       object: playerItem)
                 player.play()
             } catch {
                 print("AVAudioSession is not Active")
@@ -37,11 +60,93 @@ class PLayMusic {
         }
     }
     
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        next()
+    }
+    
     func resume() {
         player.play()
     }
 
     func pasue() {
         player.pause()
+    }
+    
+    func next() {
+        guard currentIndex < selfListTrack.count - 1 else {
+            return
+        }
+        currentIndex += 1
+        let streamUrl = selfListTrack[currentIndex].streamURL ?? ""
+        initPlayer(streamUrl: streamUrl)
+        delegate?.reloadViewController(currentIndex: currentIndex)
+    }
+    
+    func previous() {
+        guard currentIndex > 0 else {
+            return
+        }
+        currentIndex -= 1
+        let streamUrl = selfListTrack[currentIndex].streamURL ?? ""
+        initPlayer(streamUrl: streamUrl)
+        delegate?.reloadViewController(currentIndex: currentIndex)
+    }
+    
+    private func setupMediaPlayer(durationSeconds: Int) {
+        if let imageUrl = selfListTrack[currentIndex].user?.avatarUrl {
+            if let image = getImageFromUrl(urlString: imageUrl) {
+                nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size) { _ in
+                    return image
+                }
+            }
+        }
+        nowPlayingInfo[MPMediaItemPropertyArtist] = selfListTrack[currentIndex].user?.username ?? ""
+        nowPlayingInfo[MPMediaItemPropertyTitle] = selfListTrack[currentIndex].title ?? ""
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = 0
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = durationSeconds
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    
+    }
+    
+    private func setUpRemoteTransparentControls () {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.playCommand.addTarget { [unowned self] _ in
+            if self.player.rate == 0.0 && self.player.error == nil {
+                self.player.play()
+            }
+            return .commandFailed
+        }
+        
+        commandCenter.pauseCommand.addTarget { [unowned self] _ in
+            if self.player.rate != 0.0 && self.player.error == nil {
+                self.player.pause()
+            }
+            return .commandFailed
+        }
+        
+        commandCenter.nextTrackCommand.addTarget { [unowned self] _ in
+            if self.player.rate != 0.0 && self.player.error == nil {
+                self.next()
+            }
+            return .commandFailed
+        }
+        
+        commandCenter.previousTrackCommand.addTarget { [unowned self] _ in
+            if self.player.rate != 0.0 && self.player.error == nil {
+                self.previous()
+            }
+            return .commandFailed
+        }
+    }
+    
+    private func getImageFromUrl(urlString: String) -> UIImage? {
+        guard let url = URL(string: urlString) else { return nil }
+        do {
+            let data = try Data(contentsOf: url)
+            return UIImage(data: data)
+        } catch {
+            return nil
+        }
     }
 }

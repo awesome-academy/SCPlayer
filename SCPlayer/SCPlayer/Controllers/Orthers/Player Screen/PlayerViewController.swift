@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 final class PlayerViewController: UIViewController {
     
@@ -54,8 +55,12 @@ final class PlayerViewController: UIViewController {
         guard let duration = PLayMusic.shared.player.currentItem?.asset.duration else { return }
         let durationSeconds = CMTimeGetSeconds(duration)
         let currentSeconds = Double(timeSlider.value) * Double(durationSeconds)
-        let currentTime = CMTime(seconds: currentSeconds, preferredTimescale: 1000000000)
+        let timeScale = PLayMusic.shared.player.currentTime().timescale
+        let currentTime = CMTime(seconds: currentSeconds, preferredTimescale: timeScale)
         PLayMusic.shared.player.seek(to: currentTime)
+        PLayMusic.shared.nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = currentSeconds
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = PLayMusic.shared.nowPlayingInfo
+        
     }
     
     public func getData(track: Track, listTrack: [Track]) {
@@ -64,8 +69,6 @@ final class PlayerViewController: UIViewController {
         playerProperty.songName = track.title ?? ""
         playerProperty.imageUrlString = track.user?.avatarUrl ?? ""
         playerProperty.artist = track.user?.username ?? ""
-        playerProperty.streamUrl = "\(track.streamURL ?? "")?client_id=\(APIKey.key.rawValue)"
-        playerProperty.trackIndex = listTrack.firstIndex { return ($0.trackID ?? 0) == playerProperty.trackId } ?? 0
     }
     
     private func loadData(imageUrl: String, song: String, artist: String) {
@@ -95,11 +98,8 @@ final class PlayerViewController: UIViewController {
     
     private func setupPlayer() {
         UserDefaults.standard.setValue(playerProperty.trackId, forKey: "currentTrackId")
-        PLayMusic.shared.initPlay(streamUrl: playerProperty.streamUrl)
-        guard let playerItem = PLayMusic.shared.player.currentItem else { return }
-        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying),
-                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                                               object: playerItem)
+        PLayMusic.shared.preparePlayer(trackId: playerProperty.trackId, listTrack: selfListTrack)
+        PLayMusic.shared.delegate = self
         updateCurrentTime()
     }
     
@@ -107,26 +107,14 @@ final class PlayerViewController: UIViewController {
         guard let playerItem = PLayMusic.shared.player.currentItem else { return }
         let duration = playerItem.asset.duration
         let durationSeconds = CMTimeGetSeconds(duration)
-        let interval = CMTime(value: 1, timescale: 1000000000)
+        let timeScale = PLayMusic.shared.player.currentTime().timescale
+        let interval = CMTime(value: 1, timescale: timeScale)
         endTimeLabel.text = secondsToMinutesSeconds(seconds: Float(durationSeconds))
         PLayMusic.shared.player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main) { [weak self] (progressTime) in
             let currentTime = Float(CMTimeGetSeconds(progressTime))
             self?.currentTimeLabel.text = self?.secondsToMinutesSeconds(seconds: currentTime)
             self?.timeSlider.value = currentTime / Float(durationSeconds)
         }
-    }
-    
-    @objc func playerDidFinishPlaying(note: NSNotification) {
-        guard playerProperty.trackIndex < selfListTrack.count - 1 else {
-            return
-        }
-        getData(track: selfListTrack[playerProperty.trackIndex + 1], listTrack: selfListTrack)
-        DispatchQueue.main.async {
-            self.loadData(imageUrl: self.playerProperty.imageUrlString,
-                          song: self.playerProperty.songName,
-                          artist: self.playerProperty.artist)
-        }
-        setupPlayer()
     }
     
     @IBAction func playPauseButton(_ sender: UIButton) {
@@ -140,30 +128,12 @@ final class PlayerViewController: UIViewController {
     }
     
     @IBAction func previousButton(_ sender: Any) {
-        guard playerProperty.trackIndex > 0 else {
-            return
-        }
-        getData(track: selfListTrack[playerProperty.trackIndex - 1], listTrack: selfListTrack)
-        DispatchQueue.main.async {
-            self.loadData(imageUrl: self.playerProperty.imageUrlString,
-                          song: self.playerProperty.songName,
-                          artist: self.playerProperty.artist)
-            self.setupPlayer()
-        }
+        PLayMusic.shared.previous()
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        guard playerProperty.trackIndex < selfListTrack.count - 1 else {
-            return
-        }
-        getData(track: selfListTrack[playerProperty.trackIndex + 1], listTrack: selfListTrack)
-        DispatchQueue.main.async {
-            self.playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
-            self.loadData(imageUrl: self.playerProperty.imageUrlString,
-                          song: self.playerProperty.songName,
-                          artist: self.playerProperty.artist)
-            self.setupPlayer()
-        }
+        PLayMusic.shared.next()
+        
     }
     
     @IBAction func likedButton(_ sender: Any) {
@@ -174,6 +144,19 @@ final class PlayerViewController: UIViewController {
         }
         DispatchQueue.main.async {
             self.loadLikedStatus()
+        }
+    }
+}
+
+extension PlayerViewController: PlayMusicDelegate {
+    func reloadViewController(currentIndex: Int) {
+        getData(track: selfListTrack[PLayMusic.shared.currentIndex], listTrack: selfListTrack)
+        DispatchQueue.main.async {
+            self.playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
+            self.loadData(imageUrl: self.playerProperty.imageUrlString,
+                          song: self.playerProperty.songName,
+                          artist: self.playerProperty.artist)
+            self.setupPlayer()
         }
     }
 }
