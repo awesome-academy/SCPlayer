@@ -112,6 +112,7 @@ extension SearchResultsViewController: UICollectionViewDataSource {
 extension SearchResultsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = PlayerViewController()
+        viewController.getData(track: listTrackResult[indexPath.row], listTrack: listTrackResult)
         navigationController?.pushViewController(viewController, animated: true)
     }
     

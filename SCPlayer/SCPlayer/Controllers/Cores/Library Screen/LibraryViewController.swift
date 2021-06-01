@@ -159,6 +159,7 @@ extension LibraryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if isFavoritesButton {
             let viewController = PlayerViewController()
+            viewController.getData(track: listLikedTrack[indexPath.row], listTrack: listLikedTrack)
             navigationController?.pushViewController(viewController, animated: true)
         } else {
             if indexPath.row == 0 {

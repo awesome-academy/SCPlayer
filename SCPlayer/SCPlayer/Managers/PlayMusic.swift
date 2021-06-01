@@ -10,16 +10,23 @@ import AVFoundation
 import MediaPlayer
 
 protocol PlayMusicDelegate: class {
-    func reloadViewController(currentIndex: Int)
+    func reloadViewController(currentIndex: Int, listTrack: [Track])
+}
+
+protocol PlayMusicForTabBarDelegate: class {
+    func reloadViewController(currentIndex: Int, listTrack: [Track])
+    func configureTabBarPlayerView()
 }
 
 class PLayMusic {
     
+    var isPlayerScreen = false
     var selfListTrack = [Track]()
     var currentIndex = 0
     var player: AVPlayer
     var nowPlayingInfo = [String: Any]()
-    weak var delegate: PlayMusicDelegate?
+    weak var delegatePlayerScreen: PlayMusicDelegate?
+    weak var delegateTabBar: PlayMusicForTabBarDelegate?
     
     static let shared = PLayMusic()
     
@@ -28,10 +35,12 @@ class PLayMusic {
     }
     
     func preparePlayer(trackId: Int, listTrack: [Track]) {
+        UserDefaults.standard.setValue(trackId, forKey: "currentTrackId")
         selfListTrack = listTrack
         currentIndex = selfListTrack.firstIndex { return $0.trackID == trackId } ?? 0
         let streamUrl = selfListTrack[currentIndex].streamURL ?? ""
         initPlayer(streamUrl: streamUrl)
+        delegateTabBar?.reloadViewController(currentIndex: currentIndex, listTrack: listTrack)
     }
     
     func initPlayer(streamUrl: String) {
@@ -77,9 +86,9 @@ class PLayMusic {
             return
         }
         currentIndex += 1
-        let streamUrl = selfListTrack[currentIndex].streamURL ?? ""
-        initPlayer(streamUrl: streamUrl)
-        delegate?.reloadViewController(currentIndex: currentIndex)
+        preparePlayer(trackId: selfListTrack[currentIndex].trackID ?? 0, listTrack: selfListTrack)
+        delegatePlayerScreen?.reloadViewController(currentIndex: currentIndex, listTrack: selfListTrack)
+        delegateTabBar?.reloadViewController(currentIndex: currentIndex, listTrack: selfListTrack)
     }
     
     func previous() {
@@ -87,9 +96,13 @@ class PLayMusic {
             return
         }
         currentIndex -= 1
-        let streamUrl = selfListTrack[currentIndex].streamURL ?? ""
-        initPlayer(streamUrl: streamUrl)
-        delegate?.reloadViewController(currentIndex: currentIndex)
+        preparePlayer(trackId: selfListTrack[currentIndex].trackID ?? 0, listTrack: selfListTrack)
+        delegatePlayerScreen?.reloadViewController(currentIndex: currentIndex, listTrack: selfListTrack)
+        delegateTabBar?.reloadViewController(currentIndex: currentIndex, listTrack: selfListTrack)
+    }
+    
+    func configureTabBarPlayerView() {
+        delegateTabBar?.configureTabBarPlayerView()
     }
     
     private func setupMediaPlayer(durationSeconds: Int) {
