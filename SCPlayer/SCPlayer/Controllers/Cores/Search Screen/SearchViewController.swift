@@ -60,8 +60,7 @@ final class SearchViewController: UIViewController {
     private func loadData(tracks: [Track]) {
         listTrack = tracks
         listGenre.removeAll()
-        listGenre = listTrack.map { $0.genre ?? "NIL" }
-            .filter { $0 != "NIL" && $0 != "" }
+        listGenre = listTrack.map { $0.genre ?? "NIL" }.filter { !$0.isEmpty }
         listGenre.insert("All Songs", at: 0)
         listGenre.insert("Favorites", at: 0)
         DispatchQueue.main.async {

@@ -37,6 +37,14 @@ final class PlayerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadLikedStatus()
+        PLayMusic.shared.isPlayerScreen = true
+        PLayMusic.shared.configureTabBarPlayerView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        PLayMusic.shared.isPlayerScreen = false
+        PLayMusic.shared.configureTabBarPlayerView()
     }
     
     private func configure() {
@@ -44,6 +52,8 @@ final class PlayerViewController: UIViewController {
         let imageViewRadius = imageView.width * 0.5
         imageView.layer.cornerRadius = imageViewRadius
         navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        PLayMusic.shared.delegatePlayerScreen = self
         if PLayMusic.shared.player.rate != 0.0 && PLayMusic.shared.player.error == nil {
             playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
         } else {
@@ -97,9 +107,7 @@ final class PlayerViewController: UIViewController {
     }
     
     private func setupPlayer() {
-        UserDefaults.standard.setValue(playerProperty.trackId, forKey: "currentTrackId")
         PLayMusic.shared.preparePlayer(trackId: playerProperty.trackId, listTrack: selfListTrack)
-        PLayMusic.shared.delegate = self
         updateCurrentTime()
     }
     
@@ -133,7 +141,6 @@ final class PlayerViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         PLayMusic.shared.next()
-        
     }
     
     @IBAction func likedButton(_ sender: Any) {
@@ -149,8 +156,8 @@ final class PlayerViewController: UIViewController {
 }
 
 extension PlayerViewController: PlayMusicDelegate {
-    func reloadViewController(currentIndex: Int) {
-        getData(track: selfListTrack[PLayMusic.shared.currentIndex], listTrack: selfListTrack)
+    func reloadViewController(currentIndex: Int, listTrack: [Track]) {
+        getData(track: listTrack[currentIndex], listTrack: listTrack)
         DispatchQueue.main.async {
             self.playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
             self.loadData(imageUrl: self.playerProperty.imageUrlString,

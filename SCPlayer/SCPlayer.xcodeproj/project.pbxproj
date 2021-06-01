@@ -64,6 +64,7 @@
 		EC958C112658EB350039E67F /* ListPlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC958C0F2658EB350039E67F /* ListPlaylistViewController.xib */; };
 		ECA8AC8A265156AD008769F1 /* SearchByGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8AC88265156AD008769F1 /* SearchByGenreCollectionViewCell.swift */; };
 		ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA8AC89265156AD008769F1 /* SearchByGenreCollectionViewCell.xib */; };
+		ECB9B16F2665FA17006239B4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ECB9B16E2665FA17006239B4 /* SnapKit */; };
 		ECBC9EAE2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9EAC2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.swift */; };
 		ECBC9EAF2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBC9EAD2657A97F000EC31D /* PlaylistTrackCellCollectionViewCell.xib */; };
 		ECDA956B2648E7EE00970744 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95692648E7EE00970744 /* HomeViewController.swift */; };
@@ -151,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB9B16F2665FA17006239B4 /* SnapKit in Frameworks */,
 				EC6B43A1264B8B2900D0825A /* Then in Frameworks */,
 				EC6B43A4264B8B4100D0825A /* Reusable in Frameworks */,
 			);
@@ -532,6 +534,7 @@
 			packageProductDependencies = (
 				EC6B43A0264B8B2900D0825A /* Then */,
 				EC6B43A3264B8B4100D0825A /* Reusable */,
+				ECB9B16E2665FA17006239B4 /* SnapKit */,
 			);
 			productName = SCPlayer;
 			productReference = EC72AA112648DD8B00E2F4EC /* SCPlayer.app */;
@@ -563,6 +566,7 @@
 			packageReferences = (
 				EC6B439F264B8B2900D0825A /* XCRemoteSwiftPackageReference "Then" */,
 				EC6B43A2264B8B4100D0825A /* XCRemoteSwiftPackageReference "Reusable" */,
+				ECB9B16D2665FA17006239B4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = EC72AA122648DD8B00E2F4EC /* Products */;
 			projectDirPath = "";
@@ -885,6 +889,14 @@
 				minimumVersion = 4.1.1;
 			};
 		};
+		ECB9B16D2665FA17006239B4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -897,6 +909,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC6B43A2264B8B4100D0825A /* XCRemoteSwiftPackageReference "Reusable" */;
 			productName = Reusable;
+		};
+		ECB9B16E2665FA17006239B4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECB9B16D2665FA17006239B4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

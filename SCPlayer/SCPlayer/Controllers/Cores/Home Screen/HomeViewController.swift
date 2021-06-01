@@ -53,9 +53,10 @@ final class HomeViewController: UIViewController {
     private func loadData(tracks: [Track]) {
         listTrack = tracks
         listGenre.removeAll()
-        listGenre = listTrack.map { $0.genre ?? "NIL" }
-            .filter { $0 != "NIL" && $0 != "" }
+        listGenre = listTrack.map { $0.genre ?? "" }.filter { !$0.isEmpty }
         listGenre.insert("All Songs", at: 0)
+        print(listGenre.count)
+        print(listGenre)
         DispatchQueue.main.async {
             self.spinner.stopAnimating()
             self.spinner.isHidden = true
