@@ -55,8 +55,6 @@ final class HomeViewController: UIViewController {
         listGenre.removeAll()
         listGenre = listTrack.map { $0.genre ?? "" }.filter { !$0.isEmpty }
         listGenre.insert("All Songs", at: 0)
-        print(listGenre.count)
-        print(listGenre)
         DispatchQueue.main.async {
             self.spinner.stopAnimating()
             self.spinner.isHidden = true
@@ -96,9 +94,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let labelCellSize = CGSize(width: view.width, height: 60)
-        let listTrackCellSize = CGSize(width: view.width, height: 230)
-        let listAllTrackCellSize = CGSize(width: view.width, height: 460)
+        let labelCellSize = CGSize(width: view.width, height: 40)
+        let listTrackCellSize = CGSize(width: view.width, height: 180)
+        let listAllTrackCellSize = CGSize(width: view.width, height: 360)
         if indexPath.row % 2 == 0 {
             return labelCellSize
         } else if indexPath.row == 1 {

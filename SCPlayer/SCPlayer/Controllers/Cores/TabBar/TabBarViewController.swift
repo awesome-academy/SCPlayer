@@ -23,14 +23,18 @@ final class TabBarViewController: UITabBarController {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 20
-        imageView.image = UIImage(named: "avt")
         return imageView
     }()
     
     private let songLabel: UILabel = {
         let label = UILabel()
-        label.text = "See You Again"
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        label.font = UIFont.boldSystemFont(ofSize: 19.0)
+        return label
+    }()
+    
+    private var timeLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14.0)
         return label
     }()
     
@@ -57,10 +61,9 @@ final class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
         configureTabBar()
         getDataFromAPI()
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapPlayerView))
-        self.playerView.addGestureRecognizer(gesture)
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,15 +71,21 @@ final class TabBarViewController: UITabBarController {
         configurePlayerView()
     }
     
+    private func configure() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapPlayerView))
+        self.playerView.addGestureRecognizer(gesture)
+    }
+    
     private func configurePlayerView() {
         view.addSubview(playerView)
         view.addSubview(progressView)
         playerView.addSubview(imageView)
         playerView.addSubview(songLabel)
+        playerView.addSubview(timeLabel)
         playerView.addSubview(playPauseButton)
         playerView.addSubview(nextButton)
         let scale: CGFloat = view.height / 896.0
-        let playerViewYOrigin = view.bottom - 80 * scale - 82
+        let playerViewYOrigin = view.bottom - 80 * scale - 80
         
         playerView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: view.width, height: 80))
@@ -88,24 +97,31 @@ final class TabBarViewController: UITabBarController {
             make.size.equalTo(CGSize(width: 80, height: 80))
             make.left.equalTo(0)
             make.centerY.equalTo(playerView)
-        }
-        
-        songLabel.snp.makeConstraints { make in
-            make.left.equalTo(imageView.snp.right).offset(10)
-            make.right.equalTo(playPauseButton.snp.left).offset(-20)
-            make.centerY.equalTo(playerView)
+            
         }
         
         playPauseButton.snp.makeConstraints { make in
-            make.size.equalTo(CGSize(width: 26, height: 26))
-            make.right.equalTo(nextButton.snp.left).offset(-15)
+            make.size.equalTo(CGSize(width: 20, height: 20))
+            make.right.equalTo(nextButton.snp.left).offset(-30)
             make.centerY.equalTo(playerView)
         }
         
         nextButton.snp.makeConstraints { make in
-            make.size.equalTo(CGSize(width: 26, height: 26))
-            make.right.equalTo(playerView.snp.right).offset(-20)
+            make.size.equalTo(CGSize(width: 20, height: 26))
+            make.right.equalTo(playerView.snp.right).offset(-30)
             make.centerY.equalTo(playerView)
+        }
+        
+        songLabel.snp.makeConstraints { make in
+            make.left.equalTo(imageView.snp.right).offset(10)
+            make.right.equalTo(playPauseButton.snp.left).offset(-30)
+            make.top.equalTo(20)
+        }
+        
+        timeLabel.snp.makeConstraints { make in
+            make.left.equalTo(imageView.snp.right).offset(30)
+            make.right.equalTo(playPauseButton.snp.left).offset(-30)
+            make.top.equalTo(songLabel.snp.bottom).offset(10)
         }
         
         progressView.snp.makeConstraints { make in
@@ -129,10 +145,20 @@ final class TabBarViewController: UITabBarController {
         let durationSeconds = CMTimeGetSeconds(duration)
         let timeScale = PLayMusic.shared.player.currentTime().timescale
         let interval = CMTime(value: 1, timescale: timeScale)
+        let durationString = secondsToMinutesSeconds(seconds: Float(durationSeconds))
         PLayMusic.shared.player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main) { [weak self] (currentTime) in
-            let progress = CMTimeGetSeconds(currentTime) / durationSeconds
+            let currentTimeSeconds = CMTimeGetSeconds(currentTime)
+            let progress = currentTimeSeconds / durationSeconds
             self?.progressView.setProgress(Float(progress), animated: true)
+            if let secondString = self?.secondsToMinutesSeconds(seconds: Float(currentTimeSeconds)) {
+                self?.timeLabel.text = "\(secondString)        -        \(durationString)"
+            }
+            
         }
+    }
+    
+    private func secondsToMinutesSeconds(seconds: Float) -> String {
+      return "\(Int(seconds) / 60):\(Int(seconds) % 60)"
     }
     
     private func getDataFromAPI() {
