@@ -83,7 +83,7 @@ extension HomeListTrackCollectionViewCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let trackCellSize = CGSize(width: 170, height: 230)
+        let trackCellSize = CGSize(width: 130, height: 180)
         return trackCellSize
     }
     

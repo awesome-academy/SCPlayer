@@ -53,12 +53,20 @@ final class PlayerViewController: UIViewController {
         imageView.layer.cornerRadius = imageViewRadius
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        let optionButton = UIBarButtonItem(image: UIImage(named: "option2"), style: .plain, target: self, action: #selector(didTapOptionButton))
+        navigationItem.rightBarButtonItems = [optionButton]
         PLayMusic.shared.delegatePlayerScreen = self
         if PLayMusic.shared.player.rate != 0.0 && PLayMusic.shared.player.error == nil {
             playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
         } else {
             playPauseButton.setImage(UIImage(named: "play"), for: .normal)
         }
+    }
+    
+    @objc private func didTapOptionButton() {
+        let viewController = TrackAndPlaylistSettingViewController()
+        viewController.getDataTrack(trackId: playerProperty.trackId, listTrack: selfListTrack)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func handleSliderChange() {

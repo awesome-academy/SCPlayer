@@ -32,13 +32,29 @@ final class PlaylistViewController: UIViewController {
     }
     
     @IBAction func didTapPlayPauseButton(_ sender: UIButton) {
-        // Play Songs in Playlist
+        if PLayMusic.shared.player.rate == 0.0 && PLayMusic.shared.player.error == nil {
+            PLayMusic.shared.preparePlayer(trackId: listTrackResult[0].trackID ?? 0,
+                                           listTrack: listTrackResult)
+        } else {
+            PLayMusic.shared.pasue()
+        }
+        DispatchQueue.main.async {
+            self.updatePlayButtonImage()
+        }
     }
     
     @IBAction func didTapAddSongButton(_ sender: UIButton) {
         let viewController = AddSongViewController()
         viewController.getData(playlistName: selfPlaylistName, listTrack: selfListTrack)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    private func updatePlayButtonImage() {
+        if PLayMusic.shared.player.rate != 0.0 && PLayMusic.shared.player.error == nil {
+            playPauseButton.setImage(UIImage(systemName: "pause"), for: .normal)
+        } else {
+            playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
+        }
     }
     
     private func configure() {
