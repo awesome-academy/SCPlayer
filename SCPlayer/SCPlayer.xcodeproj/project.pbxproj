@@ -75,7 +75,19 @@
 		ECDA95762648E82500970744 /* LibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECDA95742648E82500970744 /* LibraryViewController.xib */; };
 		ECDA95792648F0D100970744 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDA95782648F0D100970744 /* TabBarItems.swift */; };
 		ECE6333126600C5C009C6F08 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6333026600C5C009C6F08 /* PlayerModel.swift */; };
+		ECE83F4526BB77640034BB51 /* SCPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE83F4426BB77640034BB51 /* SCPlayerTests.swift */; };
+		ECE83F4F26BB7A470034BB51 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE83F4E26BB7A470034BB51 /* HomeViewControllerTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECE83F4726BB77640034BB51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC72AA092648DD8B00E2F4EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC72AA102648DD8B00E2F4EC;
+			remoteInfo = SCPlayer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EC128A67265B7F1D00D112F0 /* ListPlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -145,6 +157,10 @@
 		ECDA95742648E82500970744 /* LibraryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryViewController.xib; sourceTree = "<group>"; };
 		ECDA95782648F0D100970744 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
 		ECE6333026600C5C009C6F08 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		ECE83F4226BB77640034BB51 /* SCPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECE83F4426BB77640034BB51 /* SCPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPlayerTests.swift; sourceTree = "<group>"; };
+		ECE83F4626BB77640034BB51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECE83F4E26BB7A470034BB51 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +171,13 @@
 				ECB9B16F2665FA17006239B4 /* SnapKit in Frameworks */,
 				EC6B43A1264B8B2900D0825A /* Then in Frameworks */,
 				EC6B43A4264B8B4100D0825A /* Reusable in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECE83F3F26BB77640034BB51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				EC72AA132648DD8B00E2F4EC /* SCPlayer */,
+				ECE83F4326BB77640034BB51 /* SCPlayerTests */,
 				EC72AA122648DD8B00E2F4EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -285,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				EC72AA112648DD8B00E2F4EC /* SCPlayer.app */,
+				ECE83F4226BB77640034BB51 /* SCPlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -514,6 +539,16 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		ECE83F4326BB77640034BB51 /* SCPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECE83F4426BB77640034BB51 /* SCPlayerTests.swift */,
+				ECE83F4E26BB7A470034BB51 /* HomeViewControllerTest.swift */,
+				ECE83F4626BB77640034BB51 /* Info.plist */,
+			);
+			path = SCPlayerTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -540,6 +575,24 @@
 			productReference = EC72AA112648DD8B00E2F4EC /* SCPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ECE83F4126BB77640034BB51 /* SCPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECE83F4926BB77640034BB51 /* Build configuration list for PBXNativeTarget "SCPlayerTests" */;
+			buildPhases = (
+				ECE83F3E26BB77640034BB51 /* Sources */,
+				ECE83F3F26BB77640034BB51 /* Frameworks */,
+				ECE83F4026BB77640034BB51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECE83F4826BB77640034BB51 /* PBXTargetDependency */,
+			);
+			name = SCPlayerTests;
+			productName = SCPlayerTests;
+			productReference = ECE83F4226BB77640034BB51 /* SCPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -551,6 +604,10 @@
 				TargetAttributes = {
 					EC72AA102648DD8B00E2F4EC = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					ECE83F4126BB77640034BB51 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = EC72AA102648DD8B00E2F4EC;
 					};
 				};
 			};
@@ -573,6 +630,7 @@
 			projectRoot = "";
 			targets = (
 				EC72AA102648DD8B00E2F4EC /* SCPlayer */,
+				ECE83F4126BB77640034BB51 /* SCPlayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -607,6 +665,13 @@
 				ECA8AC8B265156AD008769F1 /* SearchByGenreCollectionViewCell.xib in Resources */,
 				EC7FEF242656B3B10047DCE0 /* DetailCollectionViewCell.xib in Resources */,
 				EC7FEF2E2656D54B0047DCE0 /* AddSongCellCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECE83F4026BB77640034BB51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +746,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ECE83F3E26BB77640034BB51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE83F4526BB77640034BB51 /* SCPlayerTests.swift in Sources */,
+				ECE83F4F26BB7A470034BB51 /* HomeViewControllerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECE83F4826BB77640034BB51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC72AA102648DD8B00E2F4EC /* SCPlayer */;
+			targetProxy = ECE83F4726BB77640034BB51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EC72AA1F2648DD8E00E2F4EC /* LaunchScreen.storyboard */ = {
@@ -849,6 +931,48 @@
 			};
 			name = Release;
 		};
+		ECE83F4A26BB77640034BB51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7X6CSKVAS2;
+				INFOPLIST_FILE = SCPlayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = con.tk1.SCPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCPlayer.app/SCPlayer";
+			};
+			name = Debug;
+		};
+		ECE83F4B26BB77640034BB51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7X6CSKVAS2;
+				INFOPLIST_FILE = SCPlayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = con.tk1.SCPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCPlayer.app/SCPlayer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -866,6 +990,15 @@
 			buildConfigurations = (
 				EC72AA262648DD8E00E2F4EC /* Debug */,
 				EC72AA272648DD8E00E2F4EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECE83F4926BB77640034BB51 /* Build configuration list for PBXNativeTarget "SCPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECE83F4A26BB77640034BB51 /* Debug */,
+				ECE83F4B26BB77640034BB51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
